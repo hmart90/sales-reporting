@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DCMS">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=DESKTOP-K30QEVE;Initial Catalog=DCMS</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>2eb14504-5eb7-4717-908a-4c7e2d953bab</DataSourceID>
+</RptDataSource>

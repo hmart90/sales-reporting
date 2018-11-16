@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DCMS</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@ProductId">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Int32</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>dbo.GetProductWeeklyTurnoverAndScanMarginPC</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="LocalTPNitemLongdescription">
+        <DataField>LocalTPNitemLongdescription</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Fiscalweek">
+        <DataField>Fiscalweek</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="WeeklysumofSalesexclVAT">
+        <DataField>WeeklysumofSalesexclVAT</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="WeeklyScanMarginPC">
+        <DataField>WeeklyScanMarginPC</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
