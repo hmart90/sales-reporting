@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DCMS</DataSourceReference>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>GetShopList</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Local_Store_Store_code">
+        <DataField>Local Store Store code</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Local_Store_Store_name">
+        <DataField>Local Store Store name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Local_Store_format">
+        <DataField>Local Store format</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Local_Store_format_2">
+        <DataField>Local Store format 2</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

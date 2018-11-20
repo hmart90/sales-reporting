@@ -4,7 +4,7 @@
     <FullPath>Debug</FullPath>
     <OutputPath>bin\Debug</OutputPath>
     <ErrorLevel>2</ErrorLevel>
-    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDatasets>True</OverwriteDatasets>
     <OverwriteDataSources>False</OverwriteDataSources>
     <TargetServerVersion>SSRS2016</TargetServerVersion>
     <Platform>Win32</Platform>
@@ -12,7 +12,7 @@
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-    <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+    <TargetServerURL>http://localhost/reportserver_SSRS</TargetServerURL>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
     <FullPath>DebugLocal</FullPath>
@@ -50,6 +50,8 @@
   </PropertyGroup>
   <ItemGroup>
     <DataSet Include="ProductList.rsd" />
+    <DataSet Include="ShelfServiceDays.rsd" />
+    <DataSet Include="Shoplist.rsd" />
     <DataSet Include="SupplierList.rsd" />
     <DataSet Include="SupplierProductList.rsd" />
     <DataSet Include="SupplierProductStats.rsd" />
@@ -61,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Report Include="ProductWeeklyTurnoverAndScanMarginPC.rdl" />
+    <Report Include="Promotion dashboard.rdl" />
+    <Report Include="ShelfServiceDay.rdl" />
+    <Report Include="Shoplist.rdl" />
     <Report Include="SuppliersProductsStats.rdl" />
     <Report Include="SupplierWeeklyTurnoverAndScanMarginPC.rdl" />
   </ItemGroup>

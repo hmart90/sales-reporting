@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DCMS</DataSourceReference>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>GetShelfServiceDays</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Riport_ID">
+        <DataField>Riport ID</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Feladat">
+        <DataField>Feladat</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Túranap">
+        <DataField>Túranap</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Kód">
+        <DataField>Kód</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Áruház">
+        <DataField>Áruház</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Polcszervizes">
+        <DataField>Polcszervizes</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Polcos_telefonszáma">
+        <DataField>Polcos telefonszáma</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="A_DVD_Gaming_kategória_hol_található_meg_az_áruházban_">
+        <DataField>A DVD-Gaming kategória hol található meg az áruházban?</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Milyen_szomszédos_kategóriák_találhatók_mellette_">
+        <DataField>Milyen szomszédos kategóriák találhatók mellette?</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Fix__állandó_modulok_száma_összesen_">
+        <DataField>Fix, állandó modulok száma összesen?</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Hány_cm_szélesek_">
+        <DataField>Hány cm szélesek?</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Hány_db_polcból_állnak_">
+        <DataField>Hány db polcból állnak?</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Találhatók_egyéb_állandó_bútorok_az_eladótérben_">
+        <DataField>Találhatók egyéb állandó bútorok az eladótérben?</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Pro_Video_displayek_száma_összesen_">
+        <DataField>Pro Video displayek száma összesen?</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Pro_Video_displayek_helye_">
+        <DataField>Pro Video displayek helye?</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Gamma_displayek_száma_összesen_">
+        <DataField>Gamma displayek száma összesen?</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Gamma__displayek_helye_">
+        <DataField>Gamma  displayek helye?</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Megjegyzés">
+        <DataField>Megjegyzés</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Store_Size">
+        <DataField>Store Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
