@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [ReportingService]
+    WITH PASSWORD = N'D^Tp#k{Bme0tcuru4j`moXKhmsFT7_&#$!~<univfhbsdNAv', SID = 0xE236D433D540D9419E67F6C7A76BC6EA, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+

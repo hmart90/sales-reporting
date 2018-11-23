@@ -49,6 +49,7 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="OverallWeeklyStatistics.rsd" />
     <DataSet Include="ProductList.rsd" />
     <DataSet Include="ShelfServiceDays.rsd" />
     <DataSet Include="Shoplist.rsd" />
@@ -62,12 +63,15 @@
     <DataSource Include="DCMS.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="ProductList.rdl" />
     <Report Include="ProductWeeklyTurnoverAndScanMarginPC.rdl" />
     <Report Include="Promotion dashboard.rdl" />
     <Report Include="ShelfServiceDay.rdl" />
     <Report Include="Shoplist.rdl" />
+    <Report Include="SupplierList.rdl" />
     <Report Include="SuppliersProductsStats.rdl" />
     <Report Include="SupplierWeeklyTurnoverAndScanMarginPC.rdl" />
+    <Report Include="WeeklyOverallStatistics.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
