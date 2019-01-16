@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DB</DataSourceReference>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>GetStockMSTRData</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="StockMSTRId">
+        <DataField>StockMSTRId</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="Local_TPN_item_TPN">
+        <DataField>Local TPN item TPN</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="Local_TPN_item_Long_description">
+        <DataField>Local TPN item Long description</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Local_TPN_item_Primary_EAN">
+        <DataField>Local TPN item Primary EAN</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="Local_TPN_item_Status">
+        <DataField>Local TPN item Status</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Sca_Pack_Qty">
+        <DataField>Sca Pack Qty</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Local_Active_supplier_Code">
+        <DataField>Local Active supplier Code</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Local_Active_supplier_Long_description">
+        <DataField>Local Active supplier Long description</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Local_Store_Store_code">
+        <DataField>Local Store Store code</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Local_Store_Store_name">
+        <DataField>Local Store Store name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Day">
+        <DataField>Day</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Fiscal_week">
+        <DataField>Fiscal week</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Stock_units__Daily_Shops_">
+        <DataField>Stock units (Daily Shops)</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Total_Stock_value_Daily__cost_price_">
+        <DataField>Total Stock value Daily (cost price)</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Type">
+        <DataField>Type</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Filename">
+        <DataField>Filename</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
