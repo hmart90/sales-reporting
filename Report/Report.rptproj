@@ -55,6 +55,11 @@
     <DataSource Include="DB.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="SalesDailyPercentageByProduct.rdl" />
+    <Report Include="SalesDailyPercentageByStores.rdl" />
+    <Report Include="SalesPercentageByProductAndStore.rdl" />
+    <Report Include="SalesPercentageByProducts.rdl" />
+    <Report Include="SalesPercentageByStores.rdl" />
     <Report Include="SalesReportForGamma.rdl" />
     <Report Include="StockMSTRData.rdl" />
     <Report Include="UploadedFiles.rdl" />
