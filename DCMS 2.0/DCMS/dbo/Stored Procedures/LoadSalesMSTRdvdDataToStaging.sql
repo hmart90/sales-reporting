@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE dbo.LoadSalesMSTRdvdDataToStaging
-	@Filepath as nvarchar(400)
+	@Filepath as nvarchar(500),
+	@SheetName as nvarchar(500)
 AS
 
 	declare @sql nvarchar(max);
@@ -21,7 +22,7 @@ AS
 	SELECT * FROM OPENROWSET(
 	''Microsoft.ACE.OLEDB.12.0''
 	,''Excel 12.0;Database=' + @Filepath + ';HDR=YES''
-	,''SELECT * FROM [DVD-sales$A4:L]'')'
+	,''SELECT * FROM [' + @SheetName + '$A4:L]'')'
 
 	exec(@sql)
 

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-K30QEVE</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAVobTER3NakGbbaihGlg7NgAAAAACAAAAAAAQZgAAAAEAACAAAAC79+abE5vZHFpJaKibh22ke0oxav7OXL5AeU05BOtALAAAAAAOgAAAAAIAACAAAAAmqB05cVHXvVnOGYjwUBgBwwh5v+OG1cup+723fdaULZAAAAA/jOe4ooiaZvzzc84PO6zpO4BjQz/K6JqsLznRaqxGefpkFfrVqzAFCuYOfoMVI33smwtQti8mMHXFieMMCkQcRBU3UueutS7mt03cxuhNgeglXJJsjtgl1CEOZ4eEhLFEo5sZOoXaiLHNCg1KgxhXYEwKpBP+B4i3d1abJo91J4rpQWZX5uVE/d/9F/vPpoZAAAAAqxYInaexD0sVMYyUYs6qu2cmXLFbKYYoks3MUenPEwPkAFINF1u1GhtxJeSKHNeI+hJUGSpoBx46hP9cGeo+hg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASNbEGwzYMUi1h+4FUBxy7AAAAAACAAAAAAAQZgAAAAEAACAAAADWL3APBeYsRe1nBdjNMF8s/AHTrNnLS/tjryUK9BbMfwAAAAAOgAAAAAIAACAAAAD0QUHDE+sUbNfllt4Y0AkAqIThecKvc6qlpH+iMri1q5AAAAC8LraljwR5rmDxW4G29O8bMPHIbxcBwmZaESrLtEQ95zGvUiMYgpFP5v9NX0nC8UFIjqxim6tc0wOmm5kJtmd3CHY3Wgq/C/1KiPGo22xqsBLrpYEPrnsQ/EBH2LF3lSPGqueto4cj5R6ESo75yKX0fmLPPSUNMOGEI0WEQbYNG1OidfP6XE9+XA20nWrfQgtAAAAANDqqu1uCHy+lx19eL8u4qvFY0vndiJ1LvNGEZTP6QmvnvBuZSMXbZ8jBJCiPomJCp0qGQJ9oxTL5bWTmW/+tRQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -36,6 +36,7 @@
           <SSIS:Package SSIS:Name="SalesMSTRgaming.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="StockMSTRdvd_new.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="StockMSTRgaming_new.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="AutomaticMSTRupload.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="AnalyticsDB.conmgr" />
@@ -172,10 +173,10 @@
                 <SSIS:Property SSIS:Name="Name">SalesMSTRdvd</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">25</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">30</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D2AB30A1-23A9-4BDD-8CD5-974B444BB02D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4B492AA8-8BD7-43FD-A9B0-80CA343F5E97}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -227,6 +228,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{6ABCAC23-FAD6-4EA8-86EB-F318CCAB4836}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="AutomaticMSTRupload.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{F8CDE2D6-5BA0-46A8-B1AB-8222ABFD4618}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">AutomaticMSTRupload</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">17</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{68CBA3E9-F431-4183-A2E4-16C930FF8625}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
