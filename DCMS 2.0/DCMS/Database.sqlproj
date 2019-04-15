@@ -63,6 +63,7 @@
     <Folder Include="Report\Stored Procedures" />
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\View" />
+    <Folder Include="Security" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Table\StockMSTR.sql" />
@@ -93,6 +94,25 @@
     <Build Include="dbo\Table\Store.sql" />
     <Build Include="dbo\Table\StoreConnection.sql" />
     <Build Include="dbo\Stored Procedures\GetTempFileCount.sql" />
+    <Build Include="dbo\Table\StockMSTRWEEKLY.sql" />
+    <Build Include="dbo\Stored Procedures\LoadStockMSTRbigdata.sql" />
+    <Build Include="dbo\Table\FinanceMaster.sql" />
+    <Build Include="dbo\Table\ProductMaster.sql" />
+    <Build Include="dbo\Table\StoreMaster.sql" />
+    <Build Include="dbo\Table\FiscalWeek.sql" />
+    <Build Include="dbo\View\DCSFormatted.sql" />
+    <Build Include="dbo\Stored Procedures\LoadPriceMasterData.sql" />
+    <Build Include="dbo\View\YTR_report.sql" />
+    <Build Include="dbo\View\YTR_report_supplier.sql" />
+    <Build Include="dbo\View\StoreStock_Finance_MSTR.sql" />
+    <Build Include="dbo\View\Stockreport_TPN.sql" />
+    <Build Include="dbo\View\ProductMasterStock_report.sql" />
+    <Build Include="dbo\View\Salesreport_TPN.sql" />
+    <Build Include="dbo\View\SoldvalueWeekly_PricesMaster.sql" />
+    <Build Include="dbo\View\Stock_Store_arrival.sql" />
+    <Build Include="dbo\View\Stockreport_Store.sql" />
+    <Build Include="dbo\Stored Procedures\LoadMSTRbigdata.sql" />
+    <Build Include="dbo\View\FR_MSTR_comparison.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database.refactorlog" />
