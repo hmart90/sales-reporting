@@ -49,12 +49,16 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="GetSupplierDetailedWeeklyReport.rsd" />
+    <DataSet Include="GetSupplierWeeklyReport.rsd" />
     <DataSet Include="StockMSTRData.rsd" />
   </ItemGroup>
   <ItemGroup>
     <DataSource Include="DB.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="GetSupplierDetailedWeeklyReport.rdl" />
+    <Report Include="GetSupplierWeeklyReport.rdl" />
     <Report Include="SalesDailyPercentageByProduct.rdl" />
     <Report Include="SalesDailyPercentageByStores.rdl" />
     <Report Include="SalesPercentageByProductAndStore.rdl" />
