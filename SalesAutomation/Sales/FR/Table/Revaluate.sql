@@ -17,7 +17,7 @@
 
 GO
 
-CREATE TRIGGER [dbo].[TR_FR_Revaluate_SetValueForUpdatedUTC]
+CREATE TRIGGER FR.[TR_FR_Revaluate_SetValueForUpdatedUTC]
     ON FR.Revaluate
     FOR DELETE, INSERT, UPDATE
     AS

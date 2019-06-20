@@ -10,5 +10,5 @@
 	[BeszEgységár] FLOAT NOT NULL,
 	[ÉrtékOnktgAron] FLOAT NOT NULL,
 	[date] DATE NOT NULL,
-	[Comment] NVARCHAR(500) NOT NULL,
+	[site] INT NOT NULL
 )

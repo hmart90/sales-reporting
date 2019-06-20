@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Staging_StockClosing]
+﻿CREATE TABLE FR.[Staging_StockClosing]
 (
 	[Staging_StockClosingId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[FileLoadId] INT NOT NULL,

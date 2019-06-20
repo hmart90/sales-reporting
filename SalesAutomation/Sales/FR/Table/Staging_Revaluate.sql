@@ -9,4 +9,5 @@
 	[KészletMennyiség] INT NULL,
 	[ÉrtékOnktgAron] FLOAT NULL,
 	[Reason code] NVARCHAR(500) NULL,
+	[site] INT NOT NULL
 )

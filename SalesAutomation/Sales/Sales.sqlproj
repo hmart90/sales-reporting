@@ -92,5 +92,29 @@
     <Build Include="FR\Table\StockReturn.sql" />
     <Build Include="FR\Table\Staging_Revaluate.sql" />
     <Build Include="FR\Table\Revaluate.sql" />
+    <Build Include="dbo\Stored Procedures\LoadBaseData.sql" />
+    <Build Include="dbo\Stored Procedures\GetExcelSheetName.sql" />
+    <Build Include="dbo\Stored Procedures\CheckFolderContent.sql" />
+    <Build Include="dbo\Table\TempDirectoryContent.sql" />
+    <Build Include="dbo\Stored Procedures\GetFileLoadType.sql" />
+    <Build Include="dbo\Stored Procedures\GetFileLoad.sql" />
+    <Build Include="dbo\Stored Procedures\GetFileLoadCount.sql" />
+    <Build Include="FR\Stored Procedures\LoadFinanceReportFile.sql" />
+    <Build Include="FR\Stored Procedures\LoadFROpening.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFROpeningData.sql" />
+    <Build Include="FR\Stored Procedures\GetFRFileDates.sql" />
+    <Build Include="dbo\Table\TempFileDates.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFRSalesData.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRSales.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFRClosingData.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRClosing.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFRLoadingData.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRLoading.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFRRevaluateData.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRRevaluate.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFRReturnData.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRReturn.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRMoving.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFRMovingData.sql" />
   </ItemGroup>
 </Project>

@@ -17,7 +17,7 @@
 
 GO
 
-CREATE TRIGGER [dbo].[TR_FR_StockOpening_SetValueForUpdatedUTC]
+CREATE TRIGGER FR.[TR_FR_StockOpening_SetValueForUpdatedUTC]
     ON FR.StockOpening
     FOR DELETE, INSERT, UPDATE
     AS
