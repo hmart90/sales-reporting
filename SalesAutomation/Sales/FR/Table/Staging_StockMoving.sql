@@ -8,8 +8,8 @@
 	[date_e] DATE NOT NULL,
 	[corr] NVARCHAR(500) NULL,
 	[KészletMennyiség] INT NOT NULL,
-	[BeszEgységár] FLOAT NOT NULL,
-	[ÉrtékOnktgAron] FLOAT NOT NULL,
+	[BeszEgységár] FLOAT NULL,
+	[ÉrtékOnktgAron] FLOAT NULL,
 	[date] DATE NOT NULL,
 	[Comment] NVARCHAR(500) NOT NULL,
 )

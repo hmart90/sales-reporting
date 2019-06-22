@@ -33,7 +33,9 @@ SELECT
 FROM OPENROWSET(
 	''Microsoft.ACE.OLEDB.12.0''
 	,''Excel 12.0;Database=' + @Path + ';HDR=YES''
-	,''SELECT * FROM [Készletmozgások$A1:Z]'')'
+	,''SELECT * FROM [Készletmozgások$A1:Z]'')
+WHERE [tpn] IS NOT NULL
+'
 
 EXEC (@SQL)
 

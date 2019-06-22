@@ -10,6 +10,9 @@ INSERT INTO [FR].[Staging_StockOpening]
            ,[TPN]
            ,[Description]
            ,[Státusz]
+			,[Div]
+			,[Dep]
+			,[Sec]
            ,[KészletMennyiség]
            ,[BeszEgységár]
            ,[ÉrtékOnktgAron]
@@ -20,6 +23,9 @@ SELECT
            ,[TPN]
            ,[Description]
            ,[Státusz]
+			,[Div]
+			,[Dep]
+			,[Sec]
            ,[KészletMennyiség]
            ,[BeszEgységár]
            ,[ÉrtékOnktgAron]
@@ -29,7 +35,9 @@ SELECT
 FROM OPENROWSET(
 	''Microsoft.ACE.OLEDB.12.0''
 	,''Excel 12.0;Database=' + @Path + ';HDR=YES''
-	,''SELECT * FROM [Nyitó készlet$A1:Z]'')'
+	,''SELECT * FROM [Nyitó készlet$A1:Z]'')
+WHERE [tpn] IS NOT NULL
+'
 
 EXEC (@SQL)
 

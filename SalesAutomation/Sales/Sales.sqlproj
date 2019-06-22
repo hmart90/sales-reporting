@@ -70,6 +70,10 @@
     <Folder Include="Report\Table" />
     <Folder Include="Report\Stored Procedures" />
     <Folder Include="Report\Functions" />
+    <Folder Include="MSTR" />
+    <Folder Include="MSTR\Functions" />
+    <Folder Include="MSTR\Stored Procedures" />
+    <Folder Include="MSTR\Table" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Table\Store.sql" />
@@ -116,5 +120,25 @@
     <Build Include="FR\Stored Procedures\LoadFRReturn.sql" />
     <Build Include="FR\Stored Procedures\LoadFRMoving.sql" />
     <Build Include="FR\Stored Procedures\MigrateFRMovingData.sql" />
+    <Build Include="Security\MSTR.sql" />
+    <Build Include="MSTR\Table\Staging_Sales.sql" />
+    <Build Include="MSTR\Table\Staging_Stock.sql" />
+    <Build Include="MSTR\Table\Sales.sql" />
+    <Build Include="MSTR\Table\Stock.sql" />
+    <Build Include="MSTR\Stored Procedures\LoadMSTRSalesData.sql" />
+    <Build Include="MSTR\Stored Procedures\MigrateMSTRSalesData.sql" />
+    <Build Include="MSTR\Stored Procedures\LoadMSTRSalesFile.sql" />
+    <Build Include="MSTR\Stored Procedures\LoadMSTRStockData.sql" />
+    <Build Include="MSTR\Stored Procedures\LoadMSTRStockFile.sql" />
+    <Build Include="MSTR\Stored Procedures\MigrateMSTRStockData.sql" />
+    <Build Include="dbo\Table\TempFileType.sql" />
+    <Build Include="MSTR\Stored Procedures\GetMSTRFileDates.sql" />
+    <Build Include="MSTR\Stored Procedures\AutoCreateNewItemsFromMSTRSales.sql" />
+    <Build Include="MSTR\Stored Procedures\AutoCreateNewItemsFromMSTRStock.sql" />
+    <Build Include="FR\Stored Procedures\AutoCreateNewItemsFromFR.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateFileLoadType.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateFileLoadToProcessed.sql" />
+    <Build Include="dbo\Stored Procedures\GetExcelSheets.sql" />
+    <Build Include="dbo\Table\TempExcelSheet.sql" />
   </ItemGroup>
 </Project>

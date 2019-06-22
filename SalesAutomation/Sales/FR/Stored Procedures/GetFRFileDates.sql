@@ -18,7 +18,8 @@ SELECT
 FROM OPENROWSET(
 	''Microsoft.ACE.OLEDB.12.0''
 	,''Excel 12.0;Database=' + @Path + ';HDR=YES''
-	,''SELECT * FROM [Eladás$A1:Q]'')'
+	,''SELECT * FROM [Eladás$A1:Q]'')
+WHERE [Dátum] IS NOT NULL'
 
 EXEC (@SQL)
 

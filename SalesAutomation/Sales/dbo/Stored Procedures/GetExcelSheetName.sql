@@ -3,62 +3,59 @@
 AS
 
 BEGIN
-	
-	-- Get table (worksheet) or column (field) listings from an excel spreadsheet
+	SELECT TOP 1 SheetName AS SheetName FROM dbo.TempExcelSheet
 
-	DECLARE @linkedServerName sysname = 'TempExcelSpreadsheet'
-	DECLARE @sheetname nvarchar(500);
+	---- Get table (worksheet) or column (field) listings from an excel spreadsheet
 
-	IF OBJECT_ID('tempdb..#MyTempTable') IS NOT NULL
-	DROP TABLE #MyTempTable;
+	--DECLARE @linkedServerName sysname = 'TempExcelSpreadsheet'
+	--DECLARE @sheetname nvarchar(500);
 
-	-- Remove existing linked server (if necessary)
-	if exists(select null from sys.servers where name = @linkedServerName) begin
-	exec sp_dropserver @server = @linkedServerName, @droplogins = 'droplogins'
-	end
+	--IF OBJECT_ID('tempdb..#MyTempTable') IS NOT NULL
+	--DROP TABLE #MyTempTable;
 
-	-- Add the linked server
-	-- ACE 12.0 seems to work for both xsl and xslx, though some might prefer the older JET provider
-	exec sp_addlinkedserver
-	@server = @linkedServerName,
-	@srvproduct = 'ACE 12.0',
-	@provider = 'Microsoft.ACE.OLEDB.12.0',
-	@datasrc = @excelFileUrl,
-	@provstr = 'Excel 12.0;HDR=Yes'
+	---- Remove existing linked server (if necessary)
+	--if exists(select null from sys.servers where name = @linkedServerName) begin
+	--exec sp_dropserver @server = @linkedServerName, @droplogins = 'droplogins'
+	--end
 
-	-- Grab the current user to use as a remote login
-	DECLARE @suser_sname NVARCHAR(256) = SUSER_SNAME()
+	---- Add the linked server
+	---- ACE 12.0 seems to work for both xsl and xslx, though some might prefer the older JET provider
+	--exec sp_addlinkedserver
+	--@server = @linkedServerName,
+	--@srvproduct = 'ACE 12.0',
+	--@provider = 'Microsoft.ACE.OLEDB.12.0',
+	--@datasrc = @excelFileUrl,
+	--@provstr = 'Excel 12.0;HDR=Yes'
 
-	-- Add the current user as a login
-	EXEC SP_ADDLINKEDSRVLOGIN
-	@rmtsrvname = @linkedServerName,
-	@useself = 'false',
-	@locallogin = @suser_sname,
-	@rmtuser = null,
-	@rmtpassword = null
+	---- Grab the current user to use as a remote login
+	--DECLARE @suser_sname NVARCHAR(256) = SUSER_SNAME()
 
-	-- Return the table info, each worksheet pbb gets its own unique name
-	SELECT * INTO #MyTempTable FROM OPENROWSET('SQLNCLI', 'Server=(local);Trusted_Connection=yes;',
-	'EXEC sp_tables_ex TempExcelSpreadsheet');
+	---- Add the current user as a login
+	--EXEC SP_ADDLINKEDSRVLOGIN
+	--@rmtsrvname = @linkedServerName,
+	--@useself = 'false',
+	--@locallogin = @suser_sname,
+	--@rmtuser = null,
+	--@rmtpassword = null
 
-	SET @sheetname = (	SELECT TOP 1 RIGHT(LEFT(TABLE_NAME,len(TABLE_NAME)-2),len(TABLE_NAME)-3)
-						FROM #MyTempTable
-						ORDER By len(TABLE_NAME) DESC)
+	---- Return the table info, each worksheet pbb gets its own unique name
+	--SELECT * INTO #MyTempTable FROM OPENROWSET('SQLNCLI', 'Server=(local);Trusted_Connection=yes;',
+	--'EXEC sp_tables_ex TempExcelSpreadsheet');
 
-	--exec sp_executesql 'SELECT * INTO #MyTempTable FROM OPENROWSET(''SQLNCLI'', ''Server=(local);Trusted_Connection=yes;'',''EXEC sp_tables_ex TempExcelSpreadsheet'')'
-	--EXEC sp_tables_ex @linkedServerName
-	--EXEC sp_columns_ex @linkedServerName
+	--SET @sheetname = (	SELECT TOP 1 RIGHT(LEFT(TABLE_NAME,len(TABLE_NAME)-2),len(TABLE_NAME)-3)
+	--					FROM #MyTempTable
+	--					ORDER By len(TABLE_NAME) DESC)
 
-	-- Remove temp linked server
-	if exists(select null from sys.servers where name = @linkedServerName) begin
-	exec sp_dropserver @server = @linkedServerName, @droplogins = 'droplogins'
-	end
+	----exec sp_executesql 'SELECT * INTO #MyTempTable FROM OPENROWSET(''SQLNCLI'', ''Server=(local);Trusted_Connection=yes;'',''EXEC sp_tables_ex TempExcelSpreadsheet'')'
+	----EXEC sp_tables_ex @linkedServerName
+	----EXEC sp_columns_ex @linkedServerName
 
-	UPDATE dbo.FileNamePath
-	SET SheetName = @sheetname
-	WHERE FilenamePath = @excelFileUrl
+	---- Remove temp linked server
+	--if exists(select null from sys.servers where name = @linkedServerName) begin
+	--exec sp_dropserver @server = @linkedServerName, @droplogins = 'droplogins'
+	--end
 
-	SELECT @sheetname as SheetName
+	--SELECT @sheetname as SheetName
 
 END
 

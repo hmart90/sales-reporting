@@ -6,7 +6,7 @@ AS
 
 	DECLARE @sql nvarchar(max);
 	
-	SET  @sql = 'INSERT INTO TempFiles EXECUTE xp_cmdshell ''dir "' + @folderpath + '" /b'''
+	SET  @sql = 'INSERT INTO dbo.TempDirectoryContent EXECUTE xp_cmdshell ''dir "' + @folderpath + '" /b'''
 
 	EXEC(@sql)
 	

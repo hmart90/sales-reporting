@@ -8,6 +8,11 @@ SET @SQL = '
 INSERT INTO [FR].[Staging_Sales]
            ([FileLoadId],
 			[TPN],
+			[Div],
+			[Dep],
+			[Sec],
+			[Grp],
+			[Sgrp],
 			[Description],
 			[Értékesített készlet (db)],
 			[Beszerzési Egységár],
@@ -21,6 +26,11 @@ INSERT INTO [FR].[Staging_Sales]
 SELECT 
            ' + CAST(@FileLoadId AS NVARCHAR(100)) + ',
 			[TPN],
+			[Div],
+			[Dep],
+			[Sec],
+			[Grp],
+			[Sgrp],
 			[Description],
 			[Értékesített készlet (db)],
 			[Beszerzési Egységár],
@@ -34,7 +44,9 @@ SELECT
 FROM OPENROWSET(
 	''Microsoft.ACE.OLEDB.12.0''
 	,''Excel 12.0;Database=' + @Path + ';HDR=YES''
-	,''SELECT * FROM [Eladás$A1:Z]'')'
+	,''SELECT * FROM [Eladás$A1:Z]'')
+WHERE [tpn] IS NOT NULL
+'
 
 EXEC (@SQL)
 
