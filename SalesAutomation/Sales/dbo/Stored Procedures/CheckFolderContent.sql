@@ -2,6 +2,10 @@
 	@folderpath nvarchar(500)
 AS
 
+	UPDATE dbo.FileLoad
+	SET IsLoaded = 1
+	WHERE IsLoaded = 0
+
 	TRUNCATE TABLE dbo.TempDirectoryContent;
 
 	DECLARE @sql nvarchar(max);
@@ -12,7 +16,7 @@ AS
 	
 	DELETE tf
 	FROM dbo.TempDirectoryContent as tf
-	INNER JOIN dbo.FileLoad AS fnp ON tf.Name = fnp.[Name]
+	INNER JOIN dbo.FileLoad AS fnp ON tf.Name = fnp.[Name] AND fnp.IsLoaded = 0
 
 	INSERT INTO dbo.FileLoad
 		(	[Name],

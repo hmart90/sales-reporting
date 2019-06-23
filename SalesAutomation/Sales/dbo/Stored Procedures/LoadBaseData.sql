@@ -9,10 +9,10 @@ DELETE FROM dbo.Store
 
 INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('ADS',1,0.3,2100239,'ADS SERVICE KFT.(EDI)')
 INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Btech',1,0.28,40726,'BTECH MO.KFT.(S)(EDI)_HU40726_BUDAPES')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin]) VALUES ('BALLARDING',1,0.27)
+INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('BALLARDING',1,0.27,0,'BALLARDING')
 INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('CENEGA',0,0.3036,40148,'CENEGA HUNGARY KFT._HU40148_BUDAPES')
 INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('GHE',1,0.222172864321608,40397,'GAMMA HOME ENTERTAINMENT KFT.')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin]) VALUES ('MAGNEW',0,0.2791)
+INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('MAGNEW',0,0.2791,0,'MAGNEW')
 INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Neosz',1,0.3,40715,'NEOSZ KFT.')
 INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Pro Video',1,0.29,40520,'PRO VIDEOFILM&DISTRIBUTIO(EDI)_HU21339_BUDAPES')
 INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Simactive',1,0.31,40502,'SIMACTIVE DISTRIBUTION KFT')

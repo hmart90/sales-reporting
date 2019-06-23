@@ -74,6 +74,7 @@
     <Folder Include="MSTR\Functions" />
     <Folder Include="MSTR\Stored Procedures" />
     <Folder Include="MSTR\Table" />
+    <Folder Include="PostDeploymentScripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Table\Store.sql" />
@@ -140,5 +141,11 @@
     <Build Include="dbo\Stored Procedures\UpdateFileLoadToProcessed.sql" />
     <Build Include="dbo\Stored Procedures\GetExcelSheets.sql" />
     <Build Include="dbo\Table\TempExcelSheet.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PostDeploymentScripts\LoadBaseData.sql" />
   </ItemGroup>
 </Project>

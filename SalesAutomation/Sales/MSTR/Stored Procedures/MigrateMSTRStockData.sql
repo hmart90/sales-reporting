@@ -22,10 +22,10 @@ USING SourceTable AS s
 		AND t.StoreId = s.StoreId) 
 WHEN MATCHED
 THEN UPDATE 
-	SET t.[Number] = s.[Stock units (Daily Shops)],
+	SET t.[Number] = ISNULL(s.[Stock units (Daily Shops)],0),
 		t.[CostPriceValue] = s.[Total Stock value Daily (cost price)]
 
 WHEN NOT MATCHED BY TARGET 
-THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],[CostPriceValue]) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[Stock units (Daily Shops)],s.[Total Stock value Daily (cost price)]);
+THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],[CostPriceValue]) VALUES (s.[ProductId],s.StoreId,s.EventDate,ISNULL(s.[Stock units (Daily Shops)],0),s.[Total Stock value Daily (cost price)]);
 
 RETURN 0

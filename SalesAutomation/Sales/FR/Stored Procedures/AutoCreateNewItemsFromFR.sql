@@ -18,7 +18,7 @@ SELECT
 	,1
 FROM FR.Staging_Sales as sts
 LEFT JOIN dbo.Product as p ON p.TPN = sts.TPN
-WHERE p.[TPN] IS NULL AND sts.FileLoadId = @FileLoadId
+WHERE p.ProductId IS NULL AND sts.FileLoadId = @FileLoadId
 GROUP BY 
 	sts.TPN
 	,sts.Description
@@ -38,7 +38,7 @@ SELECT
 	,1
 FROM FR.Staging_StockOpening as sts
 LEFT JOIN dbo.Product as p ON p.TPN = sts.TPN
-WHERE p.[TPN] IS NULL AND sts.FileLoadId = @FileLoadId
+WHERE p.ProductId IS NULL AND sts.FileLoadId = @FileLoadId
 GROUP BY 
 	sts.TPN
 	,sts.Description
@@ -59,7 +59,7 @@ SELECT
 	,1
 FROM FR.Staging_StockClosing as sts
 LEFT JOIN dbo.Product as p ON p.TPN = sts.TPN
-WHERE p.[TPN] IS NULL AND sts.FileLoadId = @FileLoadId
+WHERE p.ProductId IS NULL AND sts.FileLoadId = @FileLoadId
 GROUP BY 
 	sts.TPN
 	,sts.Description

@@ -95,6 +95,33 @@ BEGIN
 					SET @CycleDone = 0;
 				END
 		END
+
+	IF @CycleDone = 0
+		BEGIN
+			TRUNCATE TABLE dbo.TempFileType;
+			SET @SQL = '
+			INSERT INTO [dbo].[TempFileType]
+					   ([Value])
+			SELECT *
+
+			FROM OPENROWSET(
+				''Microsoft.ACE.OLEDB.12.0''
+				,''Excel 12.0;Database=' + @Path + ';HDR=NO''
+				,''SELECT * FROM [' + @SheetName + '$L4:L4]'')';
+			EXEC (@SQL);
+			SET @CellValue = (SELECT TOP 1 [Value] FROM dbo.TempFileType);
+
+			IF @CellValue = 'Stock units (Daily Shops)'
+				BEGIN
+					SET @FileLoadType = 'MSTRStock';
+					SET @CycleDone = 1;
+				END
+			ELSE
+				BEGIN
+					SET @CycleDone = 0;
+				END
+		END
+
 END
 
 SELECT @FileLoadType as FileType
