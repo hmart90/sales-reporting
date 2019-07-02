@@ -75,6 +75,14 @@
     <Folder Include="MSTR\Stored Procedures" />
     <Folder Include="MSTR\Table" />
     <Folder Include="PostDeploymentScripts" />
+    <Folder Include="TMPL" />
+    <Folder Include="TMPL\Function" />
+    <Folder Include="TMPL\Table" />
+    <Folder Include="TMPL\Stored Procedures" />
+    <Folder Include="NLF" />
+    <Folder Include="NLF\Table" />
+    <Folder Include="NLF\Stored Procedures" />
+    <Folder Include="NLF\Function" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Table\Store.sql" />
@@ -141,11 +149,36 @@
     <Build Include="dbo\Stored Procedures\UpdateFileLoadToProcessed.sql" />
     <Build Include="dbo\Stored Procedures\GetExcelSheets.sql" />
     <Build Include="dbo\Table\TempExcelSheet.sql" />
+    <Build Include="Security\TMPL.sql" />
+    <Build Include="TMPL\Stored Procedures\GetTemplateEventDate.sql" />
+    <Build Include="TMPL\Stored Procedures\LoadTemplateOrderData.sql" />
+    <Build Include="TMPL\Table\Allocation.sql" />
+    <Build Include="TMPL\Table\Order.sql" />
+    <Build Include="TMPL\Table\OrderProductCount.sql" />
+    <Build Include="TMPL\Table\Staging_OrderProductCount.sql" />
+    <Build Include="TMPL\Stored Procedures\LoadTemplateOrderFile.sql" />
+    <Build Include="TMPL\Stored Procedures\MigrateTemplateOrderData.sql" />
+    <Build Include="TMPL\Stored Procedures\CreateOrder.sql" />
+    <Build Include="TMPL\Table\Staging_Allocation.sql" />
+    <Build Include="TMPL\Table\Staging_StoreShare.sql" />
+    <Build Include="TMPL\Stored Procedures\CalculateNewOrderAllocation.sql" />
+    <Build Include="TMPL\Stored Procedures\CalculateNewOrderProductAllocation.sql" />
+    <Build Include="TMPL\Stored Procedures\CalculateStoreShare.sql" />
+    <Build Include="Security\NLF.sql" />
+    <Build Include="NLF\Table\Staging_Range.sql" />
+    <Build Include="NLF\Table\Range.sql" />
+    <Build Include="NLF\Stored Procedures\LoadRangeFile.sql" />
+    <Build Include="NLF\Stored Procedures\LoadRangeData.sql" />
+    <Build Include="NLF\Stored Procedures\GetRangeDates.sql" />
+    <Build Include="NLF\Stored Procedures\MigrateRangeData.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PostDeploymentScripts\LoadBaseData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Sales.refactorlog" />
   </ItemGroup>
 </Project>

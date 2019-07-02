@@ -124,6 +124,65 @@ BEGIN
 
 END
 
+SET @RightSheetCount = (SELECT COUNT(TempExcelSheetId) FROM dbo.TempExcelSheet WHERE SheetName LIKE 'endelé')
+
+IF @RightSheetCount = 1
+	BEGIN
+		TRUNCATE TABLE dbo.TempFileType;
+		SET @SQL = '
+		INSERT INTO [dbo].[TempFileType]
+				   ([Value])
+		SELECT *
+
+		FROM OPENROWSET(
+			''Microsoft.ACE.OLEDB.12.0''
+			,''Excel 12.0;Database=' + @Path + ';HDR=NO''
+			,''SELECT * FROM [rendelés$A1:A1]'')';
+		EXEC (@SQL);
+		SET @CellValue = (SELECT TOP 1 [Value] FROM dbo.TempFileType);
+
+		IF @CellValue = 'Order'
+			BEGIN
+				SET @FileLoadType = 'TemplateOrder';
+				SET @CycleDone = 1;
+			END
+		ELSE
+			BEGIN
+				SET @CycleDone = 0;
+			END
+	END
+
+SET @RightSheetCount = (SELECT COUNT(TempExcelSheetId) FROM dbo.TempExcelSheet WHERE SheetName LIKE 'unka')
+
+IF @RightSheetCount = 1
+	BEGIN
+		TRUNCATE TABLE dbo.TempFileType;
+		SET @SQL = '
+		INSERT INTO [dbo].[TempFileType]
+				   ([Value])
+		SELECT *
+
+		FROM OPENROWSET(
+			''Microsoft.ACE.OLEDB.12.0''
+			,''Excel 12.0;Database=' + @Path + ';HDR=NO''
+			,''SELECT * FROM [Munka1$H1:H1]'')';
+		EXEC (@SQL);
+		SET @CellValue = (SELECT TOP 1 [Value] FROM dbo.TempFileType);
+
+		IF @CellValue = 'Store number'
+			BEGIN
+				SET @FileLoadType = 'Range';
+				SET @CycleDone = 1;
+			END
+		ELSE
+			BEGIN
+				SET @CycleDone = 0;
+			END
+	END
+
+
+
+
 SELECT @FileLoadType as FileType
 
 

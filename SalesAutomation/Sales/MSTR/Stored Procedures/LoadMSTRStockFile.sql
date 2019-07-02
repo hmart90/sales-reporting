@@ -8,6 +8,6 @@ AS
 
 	UPDATE dbo.FileLoad
 	SET IsLoaded = 1
-	WHERE Path = @Path
+	WHERE Path = @Path AND IsLoaded = 0
 
 RETURN 0

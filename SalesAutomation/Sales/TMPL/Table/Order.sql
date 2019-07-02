@@ -1,0 +1,20 @@
+﻿CREATE TABLE TMPL.[Order]
+(
+	[OrderId] INT IDENTITY(1,1) NOT NULL,
+	[EventDate] DATE NOT NULL,
+	[IsActive] BIT NOT NULL DEFAULT 1,
+	[InsertedUTC] DATETIME2(7) NOT NULL DEFAULT GETUTCDATE(),
+	[UpdatedUTC] DATETIME2(7) NOT NULL DEFAULT GETUTCDATE(),
+    CONSTRAINT [PK_TMPL_Order] PRIMARY KEY ([OrderId]) 
+)
+GO
+
+CREATE TRIGGER TMPL.[TR_TMPL_Order_SetValueForUpdatedUTC]
+    ON TMPL.[Order]
+    FOR DELETE, INSERT, UPDATE
+    AS
+    BEGIN
+		UPDATE TMPL.[Order]
+		SET UpdatedUTC = GETUTCDATE()
+		WHERE [OrderId] IN (select [OrderId] from Inserted)
+    END
