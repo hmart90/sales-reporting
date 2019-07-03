@@ -4,15 +4,15 @@
     <FullPath>Debug</FullPath>
     <OutputPath>bin\Debug</OutputPath>
     <ErrorLevel>2</ErrorLevel>
-    <OverwriteDatasets>False</OverwriteDatasets>
-    <OverwriteDataSources>False</OverwriteDataSources>
+    <OverwriteDatasets>True</OverwriteDatasets>
+    <OverwriteDataSources>True</OverwriteDataSources>
     <TargetServerVersion>SSRS2016</TargetServerVersion>
     <Platform>Win32</Platform>
     <TargetReportFolder>SalesReport</TargetReportFolder>
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-    <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+    <TargetServerURL>http://desktop-k30qeve/ReportServer_SSRS</TargetServerURL>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
     <FullPath>DebugLocal</FullPath>
@@ -49,7 +49,45 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="GetAllocationReport.rsd" />
+    <DataSet Include="GetFRRevaluate.rsd" />
+    <DataSet Include="GetFRSales.rsd" />
+    <DataSet Include="GetFRStockClosing.rsd" />
+    <DataSet Include="GetFRStockClosingDates.rsd" />
+    <DataSet Include="GetFRStockLoading.rsd" />
+    <DataSet Include="GetFRStockMoving.rsd" />
+    <DataSet Include="GetFRStockOpening.rsd" />
+    <DataSet Include="GetFRStockOpeningDates.rsd" />
+    <DataSet Include="GetFRStockReturn.rsd" />
+    <DataSet Include="GetMSTRSales.rsd" />
+    <DataSet Include="GetMSTRStock.rsd" />
+    <DataSet Include="GetMSTRStockEventDates.rsd" />
+    <DataSet Include="GetOrderList.rsd" />
+    <DataSet Include="GetOrderReport.rsd" />
+    <DataSet Include="GetProductList.rsd" />
+    <DataSet Include="GetStoreList.rsd" />
+    <DataSet Include="GetSupplierList.rsd" />
+    <DataSet Include="GetUploadedFileList.rsd" />
+  </ItemGroup>
+  <ItemGroup>
     <DataSource Include="Sales.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="AllocationReport.rdl" />
+    <Report Include="FRRevaluate.rdl" />
+    <Report Include="FRSales.rdl" />
+    <Report Include="FRStockClosing.rdl" />
+    <Report Include="FRStockMoving.rdl" />
+    <Report Include="FRStockOpening.rdl" />
+    <Report Include="FRStockReturn.rdl" />
+    <Report Include="GetFRStockLoading.rdl" />
+    <Report Include="MSTRSales.rdl" />
+    <Report Include="MSTRStock.rdl" />
+    <Report Include="OrderReport.rdl" />
+    <Report Include="ProductList.rdl" />
+    <Report Include="StoreList.rdl" />
+    <Report Include="SupplierList.rdl" />
+    <Report Include="UploadedFileList.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

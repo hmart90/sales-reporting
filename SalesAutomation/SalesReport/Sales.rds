@@ -3,6 +3,7 @@
   <ConnectionProperties>
     <Extension>SQL</Extension>
     <ConnectString>Data Source=DESKTOP-K30QEVE;Initial Catalog=Sales</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
   </ConnectionProperties>
   <DataSourceID>607cce89-284d-4db7-b3c1-33c67ce9a56a</DataSourceID>
 </RptDataSource>

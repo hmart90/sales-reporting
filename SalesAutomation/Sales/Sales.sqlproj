@@ -171,6 +171,27 @@
     <Build Include="NLF\Stored Procedures\LoadRangeData.sql" />
     <Build Include="NLF\Stored Procedures\GetRangeDates.sql" />
     <Build Include="NLF\Stored Procedures\MigrateRangeData.sql" />
+    <Build Include="TMPL\Stored Procedures\CalculateStoreStock.sql" />
+    <Build Include="Security\Report.sql" />
+    <Build Include="Report\Stored Procedures\GetProductList.sql" />
+    <Build Include="Report\Stored Procedures\GetStoreList.sql" />
+    <Build Include="Report\Stored Procedures\GetSupplierList.sql" />
+    <Build Include="Report\Stored Procedures\GetMSTRSales.sql" />
+    <Build Include="Report\Stored Procedures\GetMSTRStock.sql" />
+    <Build Include="Report\Stored Procedures\GetMSTRStockEventDates.sql" />
+    <Build Include="Report\Stored Procedures\GetFRRevaluate.sql" />
+    <Build Include="Report\Stored Procedures\GetFRSales.sql" />
+    <Build Include="Report\Stored Procedures\GetFRStockOpening.sql" />
+    <Build Include="Report\Stored Procedures\GetFRStockClosing.sql" />
+    <Build Include="Report\Stored Procedures\GetFRStockLoading.sql" />
+    <Build Include="Report\Stored Procedures\GetFRStockMoving.sql" />
+    <Build Include="Report\Stored Procedures\GetFRStockReturn.sql" />
+    <Build Include="Report\Stored Procedures\GetFRStockClosingDates.sql" />
+    <Build Include="Report\Stored Procedures\GetFRStockOpeningDates.sql" />
+    <Build Include="Report\Stored Procedures\GetUploadedFileList.sql" />
+    <Build Include="Report\Stored Procedures\GetOrderList.sql" />
+    <Build Include="Report\Stored Procedures\GetOrderReport.sql" />
+    <Build Include="Report\Stored Procedures\GetAllocationReport.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />

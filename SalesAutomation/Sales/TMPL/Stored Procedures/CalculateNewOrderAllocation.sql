@@ -11,12 +11,10 @@ SELECT OrderProductCountId FROM OrderProductCount WHERE OrderId = @OrderId
 DECLARE @RowCount INT = (SELECT count(OrderProductCountId) FROM #OrderTempTable);
 DECLARE @Cycle INT = 1;
 DECLARE @OrderProductCountId INT;
-
 WHILE @Cycle <= @RowCount
 	BEGIN
 
 		SET @OrderProductCountId = (SELECT OrderProductCountId FROM #OrderTempTable WHERE RowId = @Cycle);
-
 		EXEC [TMPL].[CalculateNewOrderProductAllocation] @OrderProductCountId;
 
 		SET @Cycle = @Cycle + 1;

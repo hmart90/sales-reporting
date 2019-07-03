@@ -8,11 +8,15 @@ DECLARE @FileLoadId INT = (SELECT FileLoadId FROM dbo.FileLoad WHERE Path = @Pat
 INSERT INTO TMPL.OrderProductCount
 		(ProductId,
 		OrderId,
-		Number)
+		Number,
+		[Min],
+		[Max])
 
 SELECT p.ProductId
 		,@OrderId
 		,[Quantity] AS Number
+		,[Min]
+		,[Max]
 FROM TMPL.[Staging_OrderProductCount] as sto
 INNER JOIN dbo.Product as p ON p.TPN = sto.TPN
 WHERE [FileLoadId] = @FileLoadId
