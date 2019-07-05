@@ -3,8 +3,6 @@
 AS
 SELECT [SupplierId]
       ,[Name]
-      ,[IsConsignement]
-      ,[Margin]
       ,[TescoCode]
       ,[TescoName]
       ,[IsAutoCreated]

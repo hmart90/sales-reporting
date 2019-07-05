@@ -192,6 +192,9 @@
     <Build Include="Report\Stored Procedures\GetOrderList.sql" />
     <Build Include="Report\Stored Procedures\GetOrderReport.sql" />
     <Build Include="Report\Stored Procedures\GetAllocationReport.sql" />
+    <Build Include="dbo\Table\SubSupplier.sql" />
+    <Build Include="Report\Stored Procedures\GetOrderCheckReport.sql" />
+    <Build Include="Report\Stored Procedures\GetSubSupplierList.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />

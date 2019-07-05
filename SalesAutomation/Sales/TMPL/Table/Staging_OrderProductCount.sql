@@ -10,6 +10,7 @@
 	[Quantity] INT NOT NULL,
 	[Min] INT NOT NULL DEFAULT 1,
 	[Max] INT NOT NULL DEFAULT 7,
-    CONSTRAINT [FK_TMPL_Staging_OrderProductCount_FileLoad_FileLoadId] FOREIGN KEY ([FileLoadId]) REFERENCES dbo.FileLoad([FileLoadId])
+    CONSTRAINT [FK_TMPL_Staging_OrderProductCount_FileLoad_FileLoadId] FOREIGN KEY ([FileLoadId]) REFERENCES dbo.FileLoad([FileLoadId]), 
+    CONSTRAINT [PK_TMPL_Staging_OrderProductCount] PRIMARY KEY ([Staging_OrderProductCountId])
 )
 GO

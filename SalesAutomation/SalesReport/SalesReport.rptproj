@@ -62,6 +62,7 @@
     <DataSet Include="GetMSTRSales.rsd" />
     <DataSet Include="GetMSTRStock.rsd" />
     <DataSet Include="GetMSTRStockEventDates.rsd" />
+    <DataSet Include="GetOrderCheckReport.rsd" />
     <DataSet Include="GetOrderList.rsd" />
     <DataSet Include="GetOrderReport.rsd" />
     <DataSet Include="GetProductList.rsd" />
@@ -83,6 +84,7 @@
     <Report Include="GetFRStockLoading.rdl" />
     <Report Include="MSTRSales.rdl" />
     <Report Include="MSTRStock.rdl" />
+    <Report Include="OrderCheckReport.rdl" />
     <Report Include="OrderReport.rdl" />
     <Report Include="ProductList.rdl" />
     <Report Include="StoreList.rdl" />

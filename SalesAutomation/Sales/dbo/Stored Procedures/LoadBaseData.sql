@@ -7,16 +7,20 @@ DELETE FROM dbo.Product
 DELETE FROM dbo.Supplier
 DELETE FROM dbo.Store
 
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('ADS',1,0.3,2100239,'ADS SERVICE KFT.(EDI)')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Btech',1,0.28,40726,'BTECH MO.KFT.(S)(EDI)_HU40726_BUDAPES')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('BALLARDING',1,0.27,0,'BALLARDING')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('CENEGA',0,0.3036,40148,'CENEGA HUNGARY KFT._HU40148_BUDAPES')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('GHE',1,0.222172864321608,40397,'GAMMA HOME ENTERTAINMENT KFT.')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('MAGNEW',0,0.2791,0,'MAGNEW')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Neosz',1,0.3,40715,'NEOSZ KFT.')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Pro Video',1,0.29,40520,'PRO VIDEOFILM&DISTRIBUTIO(EDI)_HU21339_BUDAPES')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Simactive',1,0.31,40502,'SIMACTIVE DISTRIBUTION KFT')
-INSERT INTO dbo.Supplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('DCMS',1,0,41421,'DELTA CATMAN SERVICES KFT._HU41421_BUDAKES')
+INSERT INTO dbo.SubSupplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('ADS',1,0.3,2100239,'ADS SERVICE KFT.(EDI)');
+INSERT INTO dbo.SubSupplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Btech',1,0.28,40726,'BTECH MO.KFT.(S)(EDI)_HU40726_BUDAPES');
+INSERT INTO dbo.SubSupplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('BALLARDING',1,0.27,0,'BALLARDING');
+INSERT INTO dbo.SubSupplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('CENEGA',0,0.3036,40148,'CENEGA HUNGARY KFT._HU40148_BUDAPES');
+INSERT INTO dbo.SubSupplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('GHE',1,0.222172864321608,40397,'GAMMA HOME ENTERTAINMENT KFT.');
+INSERT INTO dbo.SubSupplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('MAGNEW',0,0.2791,0,'MAGNEW');
+INSERT INTO dbo.SubSupplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Neosz',1,0.3,40715,'NEOSZ KFT.');
+INSERT INTO dbo.SubSupplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Pro Video',1,0.29,40520,'PRO VIDEOFILM&DISTRIBUTIO(EDI)_HU21339_BUDAPES');
+INSERT INTO dbo.SubSupplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('Simactive',1,0.31,40502,'SIMACTIVE DISTRIBUTION KFT');
+INSERT INTO dbo.SubSupplier ([Name],[IsConsignement],[Margin],TescoCode,TescoName) VALUES ('DCMS',1,0,41421,'DELTA CATMAN SERVICES KFT._HU41421_BUDAKES');
+
+INSERT INTO dbo.Supplier ([Name],TescoCode,TescoName) VALUES ('DCMS',41421,'DELTA CATMAN SERVICES KFT._HU41421_BUDAKES');
+
+DECLARE @SupplierId INT = (SELECT SupplierId FROM dbo.Supplier WHERE TescoCode = 41421);
 
 INSERT INTO [dbo].Store
            (
@@ -44,12 +48,14 @@ INSERT INTO [dbo].Product
 	  [TPN]
 	  ,[EAN]
 	  ,SupplierId
+	  ,SubSupplierId
 	  ,Category
       ,TitleHU
       ,TitleEN)
 SELECT [TPN*]
 		,[EAN]
-		,s.SupplierId
+		,@SupplierId
+		,s.SubSupplierId
 		,[Kategória]
 		,[Megnevezés magyar (teljes _)*]
 		,[Megnevezés angol (teljes _)] 
@@ -57,7 +63,7 @@ FROM OPENROWSET(
 	'Microsoft.ACE.OLEDB.12.0'
 	,'Excel 12.0;Database=C:\Development\database\SalesAutomation\BaseData\Product_master_data_190320.xlsx;HDR=YES'
 	,'SELECT * FROM [new$B2:H]') as xcl
-INNER JOIN dbo.Supplier as s ON s.Name = xcl.[Forgalmazó]
+INNER JOIN dbo.SubSupplier as s ON s.Name = xcl.[Forgalmazó]
 
 
 INSERT INTO [dbo].[Price]

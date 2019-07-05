@@ -2,8 +2,6 @@
 (
 	[SupplierId] INT IDENTITY(1,1) NOT NULL,
 	[Name] NVARCHAR(100) NOT NULL,
-	[IsConsignement] BIT NOT NULL DEFAULT(1),
-	[Margin] FLOAT NULL,
 	[TescoCode] INT NULL,
 	[TescoName] NVARCHAR(500) NULL,
 	[IsAutoCreated] BIT NOT NULL DEFAULT(0),
