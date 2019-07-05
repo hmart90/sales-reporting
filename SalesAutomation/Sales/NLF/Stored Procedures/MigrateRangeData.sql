@@ -7,6 +7,7 @@ WITH SourceTable AS (
 SELECT	p.ProductId
 		,[Store number] as [ConnectionCount]
 		,[range hónap] AS EventDate
+		,sto.Staging_RangeId
 FROM NLF.[Staging_Range] as sto
 INNER JOIN dbo.Product as p ON p.TPN = sto.[TPN]
 WHERE [FileLoadId] = @FileLoadId
@@ -18,9 +19,10 @@ USING SourceTable AS s
 		AND t.EventDate = s.EventDate) 
 WHEN MATCHED
 THEN UPDATE 
-	SET t.[ConnectionCount] = s.[ConnectionCount]
+	SET t.[ConnectionCount] = s.[ConnectionCount],
+		t.Staging_RangeId = s.Staging_RangeId
 
 WHEN NOT MATCHED BY TARGET 
-THEN INSERT ([ProductId],[EventDate],[ConnectionCount]) VALUES (s.[ProductId],s.EventDate,s.[ConnectionCount]);
+THEN INSERT ([ProductId],[EventDate],[ConnectionCount],Staging_RangeId) VALUES (s.[ProductId],s.EventDate,s.[ConnectionCount],s.Staging_RangeId);
 
 RETURN 0

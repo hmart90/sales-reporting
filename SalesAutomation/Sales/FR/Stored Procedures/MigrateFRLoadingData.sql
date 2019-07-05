@@ -10,6 +10,7 @@ SELECT p.ProductId
       ,[ÉrtékOnktgAron]
       ,st.StoreId
 	  ,[date] AS EventDate
+	  ,sto.Staging_StockLoadingId AS StagingId
 FROM [FR].[Staging_StockLoading] as sto
 INNER JOIN dbo.Product as p ON p.TPN = sto.TPN
 INNER JOIN dbo.Store as st ON st.Code = sto.Site
@@ -25,9 +26,10 @@ WHEN MATCHED
 THEN UPDATE 
 	SET t.[Number] = s.[KészletMennyiség],
 		t.[CostUnitPrice] = s.[BeszEgységár],
-		t.[ValueCostPrice] = s.[ÉrtékOnktgAron]
+		t.[ValueCostPrice] = s.[ÉrtékOnktgAron],
+		t.Staging_StockLoadingId = s.StagingId
 
 WHEN NOT MATCHED BY TARGET 
-THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],[CostUnitPrice],[ValueCostPrice]) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[KészletMennyiség],s.[BeszEgységár],s.[ÉrtékOnktgAron]);
+THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],[CostUnitPrice],[ValueCostPrice],Staging_StockLoadingId) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[KészletMennyiség],s.[BeszEgységár],s.[ÉrtékOnktgAron],s.StagingId);
 
 RETURN 0

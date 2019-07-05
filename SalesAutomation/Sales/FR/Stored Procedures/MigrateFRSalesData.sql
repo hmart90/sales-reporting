@@ -13,6 +13,7 @@ SELECT p.ProductId
       ,[Bruttó Árbevétel]
       ,[Dátum] AS EventDate
       ,st.StoreId
+	  ,sto.Staging_SalesId AS StagingId
 FROM [FR].[Staging_Sales] as sto
 INNER JOIN dbo.Product as p ON p.TPN = sto.TPN
 INNER JOIN dbo.Store as st ON st.Code = sto.Site
@@ -31,9 +32,10 @@ THEN UPDATE
 		t.[ValueCostPrice] = s.[Értékesített készlet (érték)],
 		t.[PriceMargin] = s.[Árrés],
 		t.[NetSales] = s.[Nettó Árbevétel],
-		t.[BrutSales] = s.[Bruttó Árbevétel]
+		t.[BrutSales] = s.[Bruttó Árbevétel],
+		t.Staging_SalesId = s.StagingId
 		
 WHEN NOT MATCHED BY TARGET 
-THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],[CostPrice],[ValueCostPrice],[PriceMargin],[NetSales],[BrutSales]) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[Értékesített készlet (db)],s.[Beszerzési Egységár],s.[Értékesített készlet (érték)],s.[Árrés],s.[Nettó Árbevétel],s.[Bruttó Árbevétel]);
+THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],[CostPrice],[ValueCostPrice],[PriceMargin],[NetSales],[BrutSales],Staging_SalesId) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[Értékesített készlet (db)],s.[Beszerzési Egységár],s.[Értékesített készlet (érték)],s.[Árrés],s.[Nettó Árbevétel],s.[Bruttó Árbevétel],s.StagingId);
 
 RETURN 0

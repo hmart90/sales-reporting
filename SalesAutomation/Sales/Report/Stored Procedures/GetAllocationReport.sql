@@ -3,7 +3,7 @@
 AS
 SELECT [AllocationId]
       ,s.[OrderProductCountId]
-	  ,p.TitleHu
+	  ,p.TitleHU
 	  ,p.TPN
       ,s.[StoreId]
 	  ,st.Code

@@ -14,13 +14,15 @@ INSERT INTO [FR].[StockMoving]
            ,[EventDate]
            ,[Number]
            ,[CostUnitPrice]
-           ,[ValueCostPrice])
+           ,[ValueCostPrice]
+		   ,Staging_StockMovingId)
 SELECT p.ProductId
       ,st.StoreId
 	  ,[date] AS EventDate
       ,[KészletMennyiség]
       ,[BeszEgységár]
       ,[ÉrtékOnktgAron]
+	  ,sto.Staging_StockMovingId
 FROM [FR].[Staging_StockMoving] as sto
 INNER JOIN dbo.Product as p ON p.TPN = sto.TPN
 INNER JOIN dbo.Store as st ON st.Code = sto.Site

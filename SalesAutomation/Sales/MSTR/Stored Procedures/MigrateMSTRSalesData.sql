@@ -10,6 +10,7 @@ SELECT p.ProductId
 		,[Scan margin]
 		,st.StoreId
 		,[Day] AS EventDate
+		,sto.Staging_SalesId
 FROM MSTR.[Staging_Sales] as sto
 INNER JOIN dbo.Product as p ON p.TPN = sto.[Local TPN item TPN]
 INNER JOIN dbo.Store as st ON st.Code = sto.[Local Store Store code]
@@ -25,9 +26,10 @@ WHEN MATCHED
 THEN UPDATE 
 	SET t.[Number] = s.[Sold units],
 		t.SalesExclVAT = s.[Sales excl VAT],
-		t.[Margin] = s.[Scan margin]
+		t.[Margin] = s.[Scan margin],
+		t.Staging_SalesId = s.Staging_SalesId
 
 WHEN NOT MATCHED BY TARGET 
-THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],SalesExclVAT,[Margin]) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[Sold units],s.[Sales excl VAT],s.[Scan margin]);
+THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],SalesExclVAT,[Margin],Staging_SalesId) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[Sold units],s.[Sales excl VAT],s.[Scan margin],s.Staging_SalesId);
 
 RETURN 0

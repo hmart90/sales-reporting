@@ -10,13 +10,15 @@ INSERT INTO TMPL.OrderProductCount
 		OrderId,
 		Number,
 		[Min],
-		[Max])
+		[Max],
+		Staging_OrderProductCountId)
 
 SELECT p.ProductId
 		,@OrderId
 		,[Quantity] AS Number
 		,[Min]
 		,[Max]
+		,sto.Staging_OrderProductCountId
 FROM TMPL.[Staging_OrderProductCount] as sto
 INNER JOIN dbo.Product as p ON p.TPN = sto.TPN
 WHERE [FileLoadId] = @FileLoadId

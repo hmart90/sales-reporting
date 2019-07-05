@@ -1,6 +1,7 @@
 ﻿CREATE TABLE [FR].[StockClosing]
 (
 	[StockClosingId] INT IDENTITY(1,1) NOT NULL,
+	[Staging_StockClosingId] INT NOT NULL,
 	[ProductId] INT NOT NULL,
 	[StoreId] INT NOT NULL,
 	[EventDate] DATE NOT NULL,
@@ -12,7 +13,8 @@
 	[UpdatedUTC] DATETIME2(7) NOT NULL DEFAULT GETUTCDATE(),
     CONSTRAINT [PK_FR_StockClosing_StockClosingId] PRIMARY KEY (StockClosingId), 
     CONSTRAINT [FK_FR_StockClosing_dbo_Product] FOREIGN KEY ([ProductId]) REFERENCES dbo.Product([ProductId]),
-    CONSTRAINT [FK_FR_StockClosing_dbo_Store] FOREIGN KEY ([StoreId]) REFERENCES dbo.Store([StoreId])
+    CONSTRAINT [FK_FR_StockClosing_dbo_Store] FOREIGN KEY ([StoreId]) REFERENCES dbo.Store([StoreId]),
+    CONSTRAINT [FK_FR_StockClosing_FR_Staging_StockClosing] FOREIGN KEY ([Staging_StockClosingId]) REFERENCES FR.Staging_StockClosing([Staging_StockClosingId])
 )
 
 GO

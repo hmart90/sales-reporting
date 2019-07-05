@@ -82,7 +82,7 @@
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
             <Height>0.42in</Height>
-            <Width>10in</Width>
+            <Width>17.64167in</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -97,7 +97,19 @@
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>2in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.28333in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.71667in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.775in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.8in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
@@ -106,22 +118,10 @@
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>2in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>2.06667in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -532,7 +532,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>FileLoadId</rd:DefaultName>
@@ -672,11 +674,14 @@
                                   <Value>=Fields!StartDate.Value</Value>
                                   <Style>
                                     <FontFamily />
+                                    <Format>yyyy-MM-dd</Format>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>StartDate</rd:DefaultName>
@@ -708,11 +713,14 @@
                                   <Value>=Fields!EndDate.Value</Value>
                                   <Style>
                                     <FontFamily />
+                                    <Format>yyyy-MM-dd</Format>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>EndDate</rd:DefaultName>
@@ -917,7 +925,7 @@
             <DataSetName>GetUploadedFileList</DataSetName>
             <Top>0.42in</Top>
             <Height>0.43in</Height>
-            <Width>10in</Width>
+            <Width>17.64167in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -925,7 +933,7 @@
         <Height>0.85in</Height>
         <Style />
       </Body>
-      <Width>10in</Width>
+      <Width>19.2in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
