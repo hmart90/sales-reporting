@@ -11,8 +11,8 @@ SELECT [AllocationId]
 FROM [TMPL].[Allocation] as s
 INNER JOIN TMPL.OrderProductCount as opc on s.[OrderProductCountId] = opc.[OrderProductCountId]
 INNER JOIN dbo.Product as p on p.ProductId = opc.ProductId
-INNER JOIN dbo.Store as st on st.StoreId = s.StoreId
+RIGHT JOIN dbo.Store as st on st.StoreId = s.StoreId
 
-WHERE opc.OrderId = @OrderId
+WHERE opc.OrderId = @OrderId OR opc.OrderId IS NULL
 
 RETURN 0

@@ -195,6 +195,7 @@
     <Build Include="dbo\Table\SubSupplier.sql" />
     <Build Include="Report\Stored Procedures\GetOrderCheckReport.sql" />
     <Build Include="Report\Stored Procedures\GetSubSupplierList.sql" />
+    <Build Include="NLF\Stored Procedures\AutoCreateNewItems.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />

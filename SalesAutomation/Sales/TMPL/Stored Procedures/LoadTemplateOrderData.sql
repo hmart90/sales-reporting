@@ -29,7 +29,7 @@ SELECT
 FROM OPENROWSET(
 	''Microsoft.ACE.OLEDB.12.0''
 	,''Excel 12.0;Database=' + @Path + ';HDR=YES''
-	,''SELECT * FROM [rendelés$A2:H]'')
+	,''SELECT * FROM [rendelés$A2:Z]'')
 WHERE 
 			[TPN] IS NOT NULL AND
 			[Quantity] IS NOT NULL AND [Quantity] > 0

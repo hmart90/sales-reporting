@@ -3,6 +3,7 @@
 AS
 	EXEC [NLF].GetRangeDates @Path
 	EXEC [NLF].LoadRangeData @Path
+	EXEC [NLF].AutoCreateNewItems @Path
 	EXEC [NLF].MigrateRangeData @Path
 
 	UPDATE dbo.FileLoad

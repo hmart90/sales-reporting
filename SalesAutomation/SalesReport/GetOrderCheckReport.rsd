@@ -51,6 +51,10 @@
         <DataField>StoreCount</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
+      <Field Name="AllocSum">
+        <DataField>AllocSum</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
     </Fields>
   </DataSet>
 </SharedDataSet>
