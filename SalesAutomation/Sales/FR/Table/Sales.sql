@@ -16,7 +16,7 @@
     CONSTRAINT [PK_FR_Sales_SalesId] PRIMARY KEY ([SalesId]),
     CONSTRAINT [FK_FR_Sales_dbo_Product] FOREIGN KEY ([ProductId]) REFERENCES dbo.Product([ProductId]),
     CONSTRAINT [FK_FR_Sales_dbo_Store] FOREIGN KEY ([StoreId]) REFERENCES dbo.Store([StoreId]) ,
-    CONSTRAINT [FK_FR_StockSales_FR_Staging_Sales] FOREIGN KEY ([Staging_SalesId]) REFERENCES FR.Staging_Sales([Staging_SalesId])
+    CONSTRAINT [FK_FR_Sales_FR_Staging_Sales] FOREIGN KEY ([Staging_SalesId]) REFERENCES FR.Staging_Sales([Staging_SalesId])
 )
 
 GO

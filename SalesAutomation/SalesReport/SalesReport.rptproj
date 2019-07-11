@@ -51,6 +51,7 @@
   <ItemGroup>
     <DataSet Include="GetAllocationReport.rsd" />
     <DataSet Include="GetAllocationStockCheckReport.rsd" />
+    <DataSet Include="GetFinanceTescoBillingReport.rsd" />
     <DataSet Include="GetFRRevaluate.rsd" />
     <DataSet Include="GetFRSales.rsd" />
     <DataSet Include="GetFRStockClosing.rsd" />
@@ -71,7 +72,9 @@
     <DataSet Include="GetOrderReport.rsd" />
     <DataSet Include="GetProductList.rsd" />
     <DataSet Include="GetStoreList.rsd" />
+    <DataSet Include="GetSubSupplierList.rsd" />
     <DataSet Include="GetSupplierList.rsd" />
+    <DataSet Include="GetSupplierMonthlyBillReport.rsd" />
     <DataSet Include="GetUploadedFileList.rsd" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +98,8 @@
     <Report Include="ProductList.rdl" />
     <Report Include="StoreList.rdl" />
     <Report Include="SupplierList.rdl" />
+    <Report Include="SupplierMonthlyBillReport.rdl" />
+    <Report Include="TescoBillingReport.rdl" />
     <Report Include="UploadedFileList.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />

@@ -200,6 +200,13 @@
     <Build Include="Report\Stored Procedures\GetOrderProductDecisionContextReport.sql" />
     <Build Include="Report\Stored Procedures\GetAllocationStockCheckReport.sql" />
     <Build Include="Report\Stored Procedures\GetOrderProductStoreList.sql" />
+    <Build Include="FR\Table\MonthlySales.sql" />
+    <Build Include="FR\Table\Staging_MonthlySales.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRMonthlySales.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFRMonthlySalesData.sql" />
+    <Build Include="Report\Stored Procedures\GetFinanceTescoBillingReport.sql" />
+    <Build Include="Report\Stored Procedures\GetSupplierMonthlyBillReport.sql" />
+    <Build Include="NLF\Stored Procedures\UpdateSubSupplierFromRange.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />
