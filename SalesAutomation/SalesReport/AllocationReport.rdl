@@ -48,6 +48,10 @@
           <DataField>Number</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="Price">
+          <DataField>Price</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="GetOrderList">
@@ -74,6 +78,111 @@
             <TablixCorner>
               <TablixCornerRows>
                 <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox5">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>SL No</Value>
+                                <Style>
+                                  <FontStyle>Normal</FontStyle>
+                                  <FontFamily>Calibri</FontFamily>
+                                  <FontSize>11pt</FontSize>
+                                  <FontWeight>Normal</FontWeight>
+                                  <TextDecoration>None</TextDecoration>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox5</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox29">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value> Total cost</Value>
+                                <Style>
+                                  <FontStyle>Normal</FontStyle>
+                                  <FontFamily>Calibri</FontFamily>
+                                  <FontSize>11pt</FontSize>
+                                  <FontWeight>Normal</FontWeight>
+                                  <TextDecoration>None</TextDecoration>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox29</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox1">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value> Cost price</Value>
+                                <Style>
+                                  <FontStyle>Normal</FontStyle>
+                                  <FontFamily>Calibri</FontFamily>
+                                  <FontSize>11pt</FontSize>
+                                  <FontWeight>Normal</FontWeight>
+                                  <TextDecoration>None</TextDecoration>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox1</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
                   <TablixCornerCell>
                     <CellContents>
                       <Textbox Name="Textbox9">
@@ -557,29 +666,10 @@
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="TPN">
-                    <GroupExpressions>
-                      <GroupExpression>=Fields!TPN.Value</GroupExpression>
-                    </GroupExpressions>
-                    <Filters>
-                      <Filter>
-                        <FilterExpression>=Fields!TPN.Value</FilterExpression>
-                        <Operator>GreaterThan</Operator>
-                        <FilterValues>
-                          <FilterValue DataType="Integer">0</FilterValue>
-                        </FilterValues>
-                      </Filter>
-                    </Filters>
-                  </Group>
-                  <SortExpressions>
-                    <SortExpression>
-                      <Value>=Fields!TPN.Value</Value>
-                    </SortExpression>
-                  </SortExpressions>
                   <TablixHeader>
                     <Size>1in</Size>
                     <CellContents>
-                      <Textbox Name="Textbox10">
+                      <Textbox Name="Textbox6">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -595,7 +685,7 @@
                             </Style>
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox10</rd:DefaultName>
+                        <rd:DefaultName>Textbox6</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
@@ -610,18 +700,39 @@
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
+                      <Group Name="TPN">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!TPN.Value</GroupExpression>
+                        </GroupExpressions>
+                        <Filters>
+                          <Filter>
+                            <FilterExpression>=Fields!TPN.Value</FilterExpression>
+                            <Operator>GreaterThan</Operator>
+                            <FilterValues>
+                              <FilterValue DataType="Integer">0</FilterValue>
+                            </FilterValues>
+                          </Filter>
+                        </Filters>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!TPN.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
                       <TablixHeader>
                         <Size>1in</Size>
                         <CellContents>
-                          <Textbox Name="Textbox14">
+                          <Textbox Name="Textbox30">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>="CD_DVD"</Value>
-                                    <Style />
+                                    <Value>=(((MAX(Fields!Price.Value)/1.27)*0.835)/352)*sum(Fields!Number.Value)</Value>
+                                    <Style>
+                                      <Format>0.00;(0.00)</Format>
+                                    </Style>
                                   </TextRun>
                                 </TextRuns>
                                 <Style>
@@ -629,7 +740,7 @@
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>Textbox14</rd:DefaultName>
+                            <rd:DefaultName>Textbox30</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>LightGrey</Color>
@@ -647,15 +758,17 @@
                           <TablixHeader>
                             <Size>1in</Size>
                             <CellContents>
-                              <Textbox Name="Textbox16">
+                              <Textbox Name="Textbox18">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value />
-                                        <Style />
+                                        <Value>=((MAX(Fields!Price.Value)/1.27)*0.835)/352</Value>
+                                        <Style>
+                                          <Format>0.000;(0.000)</Format>
+                                        </Style>
                                       </TextRun>
                                     </TextRuns>
                                     <Style>
@@ -663,7 +776,7 @@
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>Textbox16</rd:DefaultName>
+                                <rd:DefaultName>Textbox18</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>LightGrey</Color>
@@ -681,7 +794,7 @@
                               <TablixHeader>
                                 <Size>1in</Size>
                                 <CellContents>
-                                  <Textbox Name="Textbox12">
+                                  <Textbox Name="Textbox10">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
@@ -697,7 +810,7 @@
                                         </Style>
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>Textbox12</rd:DefaultName>
+                                    <rd:DefaultName>Textbox10</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Color>LightGrey</Color>
@@ -713,19 +826,17 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>1.96667in</Size>
+                                    <Size>1in</Size>
                                     <CellContents>
-                                      <Textbox Name="TPN1">
+                                      <Textbox Name="Textbox14">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!TPN.Value</Value>
-                                                <Style>
-                                                  <Format>0;(0)</Format>
-                                                </Style>
+                                                <Value>="CD_DVD"</Value>
+                                                <Style />
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
@@ -733,7 +844,7 @@
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>TPN1</rd:DefaultName>
+                                        <rd:DefaultName>Textbox14</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Color>LightGrey</Color>
@@ -748,36 +859,26 @@
                                   </TablixHeader>
                                   <TablixMembers>
                                     <TablixMember>
-                                      <Group Name="matrix1_TitleHu">
-                                        <GroupExpressions>
-                                          <GroupExpression>=Fields!TitleHu.Value</GroupExpression>
-                                        </GroupExpressions>
-                                      </Group>
-                                      <SortExpressions>
-                                        <SortExpression>
-                                          <Value>=Fields!TitleHu.Value</Value>
-                                        </SortExpression>
-                                      </SortExpressions>
                                       <TablixHeader>
-                                        <Size>4.33333in</Size>
+                                        <Size>1in</Size>
                                         <CellContents>
-                                          <Textbox Name="TitleHu">
+                                          <Textbox Name="Textbox16">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!TitleHu.Value</Value>
+                                                    <Value />
                                                     <Style />
                                                   </TextRun>
                                                 </TextRuns>
                                                 <Style>
-                                                  <TextAlign>Left</TextAlign>
+                                                  <TextAlign>Right</TextAlign>
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>TitleHu</rd:DefaultName>
+                                            <rd:DefaultName>Textbox16</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -795,14 +896,14 @@
                                           <TablixHeader>
                                             <Size>1in</Size>
                                             <CellContents>
-                                              <Textbox Name="Textbox28">
+                                              <Textbox Name="Textbox12">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=41421</Value>
+                                                        <Value />
                                                         <Style />
                                                       </TextRun>
                                                     </TextRuns>
@@ -811,7 +912,7 @@
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>Textbox28</rd:DefaultName>
+                                                <rd:DefaultName>Textbox12</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
@@ -827,18 +928,18 @@
                                           <TablixMembers>
                                             <TablixMember>
                                               <TablixHeader>
-                                                <Size>1in</Size>
+                                                <Size>1.96667in</Size>
                                                 <CellContents>
-                                                  <Textbox Name="Textbox26">
+                                                  <Textbox Name="TPN1">
                                                     <CanGrow>true</CanGrow>
                                                     <KeepTogether>true</KeepTogether>
                                                     <Paragraphs>
                                                       <Paragraph>
                                                         <TextRuns>
                                                           <TextRun>
-                                                            <Value>=Format(DateAdd("d", 1, Parameters!OrderId.Label), "yyyy.MM.dd")</Value>
+                                                            <Value>=Fields!TPN.Value</Value>
                                                             <Style>
-                                                              <Format>yyyy.MM.dd</Format>
+                                                              <Format>0;(0)</Format>
                                                             </Style>
                                                           </TextRun>
                                                         </TextRuns>
@@ -847,7 +948,7 @@
                                                         </Style>
                                                       </Paragraph>
                                                     </Paragraphs>
-                                                    <rd:DefaultName>Textbox26</rd:DefaultName>
+                                                    <rd:DefaultName>TPN1</rd:DefaultName>
                                                     <Style>
                                                       <Border>
                                                         <Color>LightGrey</Color>
@@ -862,26 +963,36 @@
                                               </TablixHeader>
                                               <TablixMembers>
                                                 <TablixMember>
+                                                  <Group Name="matrix1_TitleHu">
+                                                    <GroupExpressions>
+                                                      <GroupExpression>=Fields!TitleHu.Value</GroupExpression>
+                                                    </GroupExpressions>
+                                                  </Group>
+                                                  <SortExpressions>
+                                                    <SortExpression>
+                                                      <Value>=Fields!TitleHu.Value</Value>
+                                                    </SortExpression>
+                                                  </SortExpressions>
                                                   <TablixHeader>
-                                                    <Size>1in</Size>
+                                                    <Size>4.33333in</Size>
                                                     <CellContents>
-                                                      <Textbox Name="Textbox24">
+                                                      <Textbox Name="TitleHu">
                                                         <CanGrow>true</CanGrow>
                                                         <KeepTogether>true</KeepTogether>
                                                         <Paragraphs>
                                                           <Paragraph>
                                                             <TextRuns>
                                                               <TextRun>
-                                                                <Value>="MPBL"</Value>
+                                                                <Value>=Fields!TitleHu.Value</Value>
                                                                 <Style />
                                                               </TextRun>
                                                             </TextRuns>
                                                             <Style>
-                                                              <TextAlign>Right</TextAlign>
+                                                              <TextAlign>Left</TextAlign>
                                                             </Style>
                                                           </Paragraph>
                                                         </Paragraphs>
-                                                        <rd:DefaultName>Textbox24</rd:DefaultName>
+                                                        <rd:DefaultName>TitleHu</rd:DefaultName>
                                                         <Style>
                                                           <Border>
                                                             <Color>LightGrey</Color>
@@ -899,14 +1010,14 @@
                                                       <TablixHeader>
                                                         <Size>1in</Size>
                                                         <CellContents>
-                                                          <Textbox Name="Textbox22">
+                                                          <Textbox Name="Textbox28">
                                                             <CanGrow>true</CanGrow>
                                                             <KeepTogether>true</KeepTogether>
                                                             <Paragraphs>
                                                               <Paragraph>
                                                                 <TextRuns>
                                                                   <TextRun>
-                                                                    <Value>=49007</Value>
+                                                                    <Value>=41421</Value>
                                                                     <Style />
                                                                   </TextRun>
                                                                 </TextRuns>
@@ -915,7 +1026,7 @@
                                                                 </Style>
                                                               </Paragraph>
                                                             </Paragraphs>
-                                                            <rd:DefaultName>Textbox22</rd:DefaultName>
+                                                            <rd:DefaultName>Textbox28</rd:DefaultName>
                                                             <Style>
                                                               <Border>
                                                                 <Color>LightGrey</Color>
@@ -933,15 +1044,17 @@
                                                           <TablixHeader>
                                                             <Size>1in</Size>
                                                             <CellContents>
-                                                              <Textbox Name="Textbox20">
+                                                              <Textbox Name="Textbox26">
                                                                 <CanGrow>true</CanGrow>
                                                                 <KeepTogether>true</KeepTogether>
                                                                 <Paragraphs>
                                                                   <Paragraph>
                                                                     <TextRuns>
                                                                       <TextRun>
-                                                                        <Value>=sum(Fields!Number.Value)</Value>
-                                                                        <Style />
+                                                                        <Value>=Format(DateAdd("d", 1, Parameters!OrderId.Label), "yyyy.MM.dd")</Value>
+                                                                        <Style>
+                                                                          <Format>yyyy.MM.dd</Format>
+                                                                        </Style>
                                                                       </TextRun>
                                                                     </TextRuns>
                                                                     <Style>
@@ -949,7 +1062,7 @@
                                                                     </Style>
                                                                   </Paragraph>
                                                                 </Paragraphs>
-                                                                <rd:DefaultName>Textbox20</rd:DefaultName>
+                                                                <rd:DefaultName>Textbox26</rd:DefaultName>
                                                                 <Style>
                                                                   <Border>
                                                                     <Color>LightGrey</Color>
@@ -963,19 +1076,127 @@
                                                             </CellContents>
                                                           </TablixHeader>
                                                           <TablixMembers>
-                                                            <TablixMember />
+                                                            <TablixMember>
+                                                              <TablixHeader>
+                                                                <Size>1in</Size>
+                                                                <CellContents>
+                                                                  <Textbox Name="Textbox24">
+                                                                    <CanGrow>true</CanGrow>
+                                                                    <KeepTogether>true</KeepTogether>
+                                                                    <Paragraphs>
+                                                                      <Paragraph>
+                                                                        <TextRuns>
+                                                                          <TextRun>
+                                                                            <Value>="MPBL"</Value>
+                                                                            <Style />
+                                                                          </TextRun>
+                                                                        </TextRuns>
+                                                                        <Style>
+                                                                          <TextAlign>Right</TextAlign>
+                                                                        </Style>
+                                                                      </Paragraph>
+                                                                    </Paragraphs>
+                                                                    <rd:DefaultName>Textbox24</rd:DefaultName>
+                                                                    <Style>
+                                                                      <Border>
+                                                                        <Color>LightGrey</Color>
+                                                                      </Border>
+                                                                      <PaddingLeft>2pt</PaddingLeft>
+                                                                      <PaddingRight>2pt</PaddingRight>
+                                                                      <PaddingTop>2pt</PaddingTop>
+                                                                      <PaddingBottom>2pt</PaddingBottom>
+                                                                    </Style>
+                                                                  </Textbox>
+                                                                </CellContents>
+                                                              </TablixHeader>
+                                                              <TablixMembers>
+                                                                <TablixMember>
+                                                                  <TablixHeader>
+                                                                    <Size>1in</Size>
+                                                                    <CellContents>
+                                                                      <Textbox Name="Textbox22">
+                                                                        <CanGrow>true</CanGrow>
+                                                                        <KeepTogether>true</KeepTogether>
+                                                                        <Paragraphs>
+                                                                          <Paragraph>
+                                                                            <TextRuns>
+                                                                              <TextRun>
+                                                                                <Value>=49007</Value>
+                                                                                <Style />
+                                                                              </TextRun>
+                                                                            </TextRuns>
+                                                                            <Style>
+                                                                              <TextAlign>Right</TextAlign>
+                                                                            </Style>
+                                                                          </Paragraph>
+                                                                        </Paragraphs>
+                                                                        <rd:DefaultName>Textbox22</rd:DefaultName>
+                                                                        <Style>
+                                                                          <Border>
+                                                                            <Color>LightGrey</Color>
+                                                                          </Border>
+                                                                          <PaddingLeft>2pt</PaddingLeft>
+                                                                          <PaddingRight>2pt</PaddingRight>
+                                                                          <PaddingTop>2pt</PaddingTop>
+                                                                          <PaddingBottom>2pt</PaddingBottom>
+                                                                        </Style>
+                                                                      </Textbox>
+                                                                    </CellContents>
+                                                                  </TablixHeader>
+                                                                  <TablixMembers>
+                                                                    <TablixMember>
+                                                                      <TablixHeader>
+                                                                        <Size>1in</Size>
+                                                                        <CellContents>
+                                                                          <Textbox Name="Textbox20">
+                                                                            <CanGrow>true</CanGrow>
+                                                                            <KeepTogether>true</KeepTogether>
+                                                                            <Paragraphs>
+                                                                              <Paragraph>
+                                                                                <TextRuns>
+                                                                                  <TextRun>
+                                                                                    <Value>=sum(Fields!Number.Value)</Value>
+                                                                                    <Style />
+                                                                                  </TextRun>
+                                                                                </TextRuns>
+                                                                                <Style>
+                                                                                  <TextAlign>Right</TextAlign>
+                                                                                </Style>
+                                                                              </Paragraph>
+                                                                            </Paragraphs>
+                                                                            <rd:DefaultName>Textbox20</rd:DefaultName>
+                                                                            <Style>
+                                                                              <Border>
+                                                                                <Color>LightGrey</Color>
+                                                                              </Border>
+                                                                              <PaddingLeft>2pt</PaddingLeft>
+                                                                              <PaddingRight>2pt</PaddingRight>
+                                                                              <PaddingTop>2pt</PaddingTop>
+                                                                              <PaddingBottom>2pt</PaddingBottom>
+                                                                            </Style>
+                                                                          </Textbox>
+                                                                        </CellContents>
+                                                                      </TablixHeader>
+                                                                      <TablixMembers>
+                                                                        <TablixMember />
+                                                                      </TablixMembers>
+                                                                    </TablixMember>
+                                                                  </TablixMembers>
+                                                                </TablixMember>
+                                                              </TablixMembers>
+                                                            </TablixMember>
                                                           </TablixMembers>
                                                         </TablixMember>
                                                       </TablixMembers>
                                                     </TablixMember>
                                                   </TablixMembers>
+                                                  <DataElementOutput>Output</DataElementOutput>
                                                 </TablixMember>
                                               </TablixMembers>
                                             </TablixMember>
                                           </TablixMembers>
                                         </TablixMember>
                                       </TablixMembers>
-                                      <DataElementOutput>Output</DataElementOutput>
                                     </TablixMember>
                                   </TablixMembers>
                                 </TablixMember>
@@ -992,16 +1213,15 @@
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
             <RepeatRowHeaders>true</RepeatRowHeaders>
             <DataSetName>GetAllocationReport</DataSetName>
-            <Top>0in</Top>
             <Height>1.05in</Height>
-            <Width>16.29167in</Width>
+            <Width>19.29167in</Width>
             <Style />
           </Tablix>
         </ReportItems>
         <Height>1.05in</Height>
         <Style />
       </Body>
-      <Width>16.96667in</Width>
+      <Width>20.29167in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

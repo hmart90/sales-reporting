@@ -19,18 +19,20 @@ WHILE @CurrentCount <> @TargetCount AND @Cycle < 10000
 		TRUNCATE TABLE TMPL.Staging_Allocation
 
 		INSERT INTO TMPL.Staging_Allocation
-			(ProductId,StoreId,Number)
+			(ProductId,StoreId,Number,[TargetNumber])
 
 		SELECT 
 			@ProductId,
 			stss.StoreId,
 			(CASE	
-				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) > @Max THEN @Max
+				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) > @Max AND @Max > Stock THEN @Max
+				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) > @Max AND @Max <= Stock THEN Stock
 				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) < Stock THEN Stock
 				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) < @Min THEN @Min
 				ELSE round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0)
 			END		
-			) AS TargetAllocation
+			) AS TargetAllocation,
+			round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0)
 
 		FROM TMPL.Staging_StoreShare as stss
 
@@ -73,12 +75,28 @@ IF @CurrentCount <> @TargetCount
 	END
 
 INSERT INTO TMPL.Allocation
-	(StoreId,Number,OrderProductCountId)
+	(StoreId,Number,OrderProductCountId,[Stock],[TargetNumber],[StoreShare])
 SELECT
 	sta.StoreId,
 	Number - stss.Stock,
-	@OrderProductCountId
+	@OrderProductCountId,
+	stss.Stock,
+	sta.TargetNumber,
+	stss.Share
 FROM TMPL.Staging_Allocation as sta
 INNER JOIN TMPL.Staging_StoreShare as stss ON stss.StoreId = sta.StoreId
+
+INSERT INTO TMPL.Allocation
+	(StoreId,Number,OrderProductCountId,[Stock],[TargetNumber],[StoreShare])
+SELECT
+	s.StoreId,
+	0,
+	@OrderProductCountId,
+	0,
+	0,
+	0
+FROM dbo.Store as s
+WHERE s.StoreId NOT IN (SELECT StoreId FROM TMPL.Staging_Allocation)
+
 
 RETURN 0

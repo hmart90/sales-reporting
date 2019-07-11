@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <DataSet Include="GetAllocationReport.rsd" />
+    <DataSet Include="GetAllocationStockCheckReport.rsd" />
     <DataSet Include="GetFRRevaluate.rsd" />
     <DataSet Include="GetFRSales.rsd" />
     <DataSet Include="GetFRStockClosing.rsd" />
@@ -64,6 +65,9 @@
     <DataSet Include="GetMSTRStockEventDates.rsd" />
     <DataSet Include="GetOrderCheckReport.rsd" />
     <DataSet Include="GetOrderList.rsd" />
+    <DataSet Include="GetOrderProductDecisionContextReport.rsd" />
+    <DataSet Include="GetOrderProductList.rsd" />
+    <DataSet Include="GetOrderProductStoreList.rsd" />
     <DataSet Include="GetOrderReport.rsd" />
     <DataSet Include="GetProductList.rsd" />
     <DataSet Include="GetStoreList.rsd" />
@@ -75,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Report Include="AllocationReport.rdl" />
+    <Report Include="AllocationStockCheckReport.rdl" />
     <Report Include="FRRevaluate.rdl" />
     <Report Include="FRSales.rdl" />
     <Report Include="FRStockClosing.rdl" />
@@ -85,6 +90,7 @@
     <Report Include="MSTRSales.rdl" />
     <Report Include="MSTRStock.rdl" />
     <Report Include="OrderCheckReport.rdl" />
+    <Report Include="OrderProductDecisionContextReport.rdl" />
     <Report Include="OrderReport.rdl" />
     <Report Include="ProductList.rdl" />
     <Report Include="StoreList.rdl" />

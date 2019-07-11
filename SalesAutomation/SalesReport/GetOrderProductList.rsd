@@ -12,40 +12,16 @@
         </DataSetParameter>
       </DataSetParameters>
       <CommandType>StoredProcedure</CommandType>
-      <CommandText>Report.GetAllocationReport</CommandText>
+      <CommandText>Report.GetOrderProductList</CommandText>
     </Query>
     <Fields>
-      <Field Name="AllocationId">
-        <DataField>AllocationId</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
       <Field Name="OrderProductCountId">
         <DataField>OrderProductCountId</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
-      <Field Name="TitleHu">
+      <Field Name="TitleHU">
         <DataField>TitleHU</DataField>
         <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="TPN">
-        <DataField>TPN</DataField>
-        <rd:TypeName>System.Int64</rd:TypeName>
-      </Field>
-      <Field Name="StoreId">
-        <DataField>StoreId</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="Code">
-        <DataField>Code</DataField>
-        <rd:TypeName>System.Double</rd:TypeName>
-      </Field>
-      <Field Name="Number">
-        <DataField>Number</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="Price">
-        <DataField>Price</DataField>
-        <rd:TypeName>System.Double</rd:TypeName>
       </Field>
     </Fields>
   </DataSet>

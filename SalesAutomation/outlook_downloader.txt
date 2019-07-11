@@ -1,0 +1,12 @@
+Public Sub SaveAttachmentsToDisk(MItem As Outlook.MailItem)
+    Dim oAttachment As Outlook.Attachment
+    Dim sSaveFolder As String
+    Dim dateFormat As String
+    dateFormat = Format(Now, "yyyy-mm-dd hh-mm-ss")
+    sSaveFolder = "C:\Analytics\DB files\Processing\ADL\"
+    For Each oAttachment In MItem.Attachments
+        If InStr(oAttachment, "xls") > 0 Then
+            oAttachment.SaveAsFile sSaveFolder & dateFormat & oAttachment.DisplayName
+        End If
+    Next
+End Sub

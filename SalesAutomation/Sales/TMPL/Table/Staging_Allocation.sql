@@ -4,5 +4,6 @@
 	ProductId INT NOT NULL,
 	[StoreId] INT NOT NULL,
 	[Number] INT NOT NULL,
+	[TargetNumber] FLOAT NULL,
 )
 GO

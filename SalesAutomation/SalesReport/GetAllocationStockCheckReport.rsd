@@ -10,20 +10,24 @@
           <OmitFromQuery>false</OmitFromQuery>
           <rd:DbType>Int32</rd:DbType>
         </DataSetParameter>
+        <DataSetParameter Name="@OrderProductCountId">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Int32</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@StoreId">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Int32</rd:DbType>
+        </DataSetParameter>
       </DataSetParameters>
       <CommandType>StoredProcedure</CommandType>
-      <CommandText>Report.GetAllocationReport</CommandText>
+      <CommandText>Report.GetAllocationStockCheckReport</CommandText>
     </Query>
     <Fields>
-      <Field Name="AllocationId">
-        <DataField>AllocationId</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="OrderProductCountId">
-        <DataField>OrderProductCountId</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="TitleHu">
+      <Field Name="TitleHU">
         <DataField>TitleHU</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
@@ -31,21 +35,25 @@
         <DataField>TPN</DataField>
         <rd:TypeName>System.Int64</rd:TypeName>
       </Field>
-      <Field Name="StoreId">
-        <DataField>StoreId</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
+      <Field Name="Name">
+        <DataField>Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="Code">
         <DataField>Code</DataField>
         <rd:TypeName>System.Double</rd:TypeName>
       </Field>
-      <Field Name="Number">
-        <DataField>Number</DataField>
+      <Field Name="FirstStockDate">
+        <DataField>FirstStockDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="FirstStockNumber">
+        <DataField>FirstStockNumber</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
-      <Field Name="Price">
-        <DataField>Price</DataField>
-        <rd:TypeName>System.Double</rd:TypeName>
+      <Field Name="AllocatedNumber">
+        <DataField>AllocatedNumber</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
     </Fields>
   </DataSet>

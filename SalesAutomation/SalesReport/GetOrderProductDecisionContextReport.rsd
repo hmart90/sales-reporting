@@ -4,7 +4,7 @@
     <Query>
       <DataSourceReference>Sales</DataSourceReference>
       <DataSetParameters>
-        <DataSetParameter Name="@OrderId">
+        <DataSetParameter Name="@OrderProductCountId">
           <ReadOnly>false</ReadOnly>
           <Nullable>false</Nullable>
           <OmitFromQuery>false</OmitFromQuery>
@@ -12,28 +12,12 @@
         </DataSetParameter>
       </DataSetParameters>
       <CommandType>StoredProcedure</CommandType>
-      <CommandText>Report.GetAllocationReport</CommandText>
+      <CommandText>Report.GetOrderProductDecisionContextReport</CommandText>
     </Query>
     <Fields>
-      <Field Name="AllocationId">
-        <DataField>AllocationId</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="OrderProductCountId">
-        <DataField>OrderProductCountId</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
-      </Field>
-      <Field Name="TitleHu">
-        <DataField>TitleHU</DataField>
+      <Field Name="Name">
+        <DataField>Name</DataField>
         <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="TPN">
-        <DataField>TPN</DataField>
-        <rd:TypeName>System.Int64</rd:TypeName>
-      </Field>
-      <Field Name="StoreId">
-        <DataField>StoreId</DataField>
-        <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
       <Field Name="Code">
         <DataField>Code</DataField>
@@ -43,9 +27,33 @@
         <DataField>Number</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
-      <Field Name="Price">
-        <DataField>Price</DataField>
+      <Field Name="Stock">
+        <DataField>Stock</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TargetNumber">
+        <DataField>TargetNumber</DataField>
         <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="StoreShare">
+        <DataField>StoreShare</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Min">
+        <DataField>Min</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Max">
+        <DataField>Max</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="maxstock">
+        <DataField>maxstock</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="sumsales">
+        <DataField>sumsales</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
     </Fields>
   </DataSet>

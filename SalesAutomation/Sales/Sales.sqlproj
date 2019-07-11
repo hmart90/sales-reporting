@@ -196,6 +196,10 @@
     <Build Include="Report\Stored Procedures\GetOrderCheckReport.sql" />
     <Build Include="Report\Stored Procedures\GetSubSupplierList.sql" />
     <Build Include="NLF\Stored Procedures\AutoCreateNewItems.sql" />
+    <Build Include="Report\Stored Procedures\GetOrderProductList.sql" />
+    <Build Include="Report\Stored Procedures\GetOrderProductDecisionContextReport.sql" />
+    <Build Include="Report\Stored Procedures\GetAllocationStockCheckReport.sql" />
+    <Build Include="Report\Stored Procedures\GetOrderProductStoreList.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />
