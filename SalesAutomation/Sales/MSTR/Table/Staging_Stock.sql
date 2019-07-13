@@ -16,3 +16,7 @@
     CONSTRAINT [PK_MSTR_Staging_Stock] PRIMARY KEY ([Staging_StockId]), 
     CONSTRAINT [FK_MSTR_Staging_Stock_FileLoad_FileLoadId] FOREIGN KEY ([FileLoadId]) REFERENCES dbo.FileLoad([FileLoadId])
 )
+
+GO
+
+CREATE INDEX [IX_MSTR_Staging_Stock_FileLoadId] ON [MSTR].[Staging_Stock] (FileLoadId)

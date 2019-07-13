@@ -12,3 +12,8 @@
 	[date] DATE NOT NULL,
 	[site] INT NOT NULL
 )
+
+GO
+
+CREATE INDEX [IX_FR_Staging_StockLoading_FileLoadId] ON [FR].Staging_StockLoading (FileLoadId)
+

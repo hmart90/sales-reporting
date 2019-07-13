@@ -26,3 +26,8 @@ CREATE TRIGGER MSTR.[TR_MSTR_Sales_SetValueForUpdatedUTC]
 		SET UpdatedUTC = GETUTCDATE()
 		WHERE SalesId IN (select SalesId from Inserted)
     END
+
+
+GO
+
+CREATE INDEX [IX_MSTR_Sales_ProductId_StoreId_EventDate] ON [MSTR].[Sales] (ProductId,StoreId,EventDate)

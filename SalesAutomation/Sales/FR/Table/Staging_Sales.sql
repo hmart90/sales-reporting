@@ -18,3 +18,7 @@
 	[Dátum] DATE NOT NULL,
 	[Site] INT NOT NULL
 )
+
+GO
+
+CREATE INDEX [IX_FR_Staging_Sales_FileLoadId] ON [FR].[Staging_Sales] (FileLoadId)

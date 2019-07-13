@@ -14,3 +14,6 @@
     CONSTRAINT [PK_TMPL_Staging_OrderProductCount] PRIMARY KEY ([Staging_OrderProductCountId])
 )
 GO
+
+
+CREATE INDEX [IX_TMPL_Staging_OrderProductCount_FileLoadId] ON [TMPL].[Staging_OrderProductCount] (FileLoadId)

@@ -15,3 +15,8 @@
 	[Site] INT NOT NULL
 
 )
+
+GO
+
+CREATE INDEX [IX_FR_Staging_StockClosing_FileLoadId] ON [FR].Staging_StockClosing (FileLoadId)
+

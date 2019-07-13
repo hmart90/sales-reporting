@@ -13,3 +13,8 @@
 	[date] DATE NOT NULL,
 	[Comment] NVARCHAR(500) NOT NULL,
 )
+
+GO
+
+CREATE INDEX [IX_FR_Staging_StockMoving_FileLoadId] ON [FR].Staging_StockMoving (FileLoadId)
+

@@ -11,3 +11,7 @@
 	[Reason code] NVARCHAR(500) NULL,
 	[site] INT NOT NULL
 )
+
+GO
+
+CREATE INDEX [IX_FR_Staging_Revaluate_FileLoadId] ON [FR].[Staging_Revaluate] (FileLoadId)

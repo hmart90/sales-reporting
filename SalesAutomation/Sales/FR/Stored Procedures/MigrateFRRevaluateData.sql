@@ -15,7 +15,7 @@ SELECT p.ProductId
 FROM [FR].[Staging_Revaluate] as sto
 INNER JOIN dbo.Product as p ON p.TPN = sto.TPN
 INNER JOIN dbo.Store as st ON st.Code = sto.Site
-WHERE [FileLoadId] = @FileLoadId
+WHERE [FileLoadId] = @FileLoadId AND [KészletMennyiség] IS NOT NULL
 )
 
 MERGE FR.Revaluate AS t

@@ -9,6 +9,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "AutomaticDataLoader", "Auto
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SalesReport", "SalesReport\SalesReport.rptproj", "{7506D734-356A-4316-97C6-408BFBC573DE}"
 EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "AdminReport", "Report Project1\AdminReport.rptproj", "{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{7506D734-356A-4316-97C6-408BFBC573DE}.Release|Any CPU.ActiveCfg = Release
 		{7506D734-356A-4316-97C6-408BFBC573DE}.Release|Any CPU.Build.0 = Release
 		{7506D734-356A-4316-97C6-408BFBC573DE}.Release|Any CPU.Deploy.0 = Release
+		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Debug|Any CPU.ActiveCfg = Debug
+		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Debug|Any CPU.Build.0 = Debug
+		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Debug|Any CPU.Deploy.0 = Debug
+		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.DebugLocal|Any CPU.ActiveCfg = DebugLocal
+		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.DebugLocal|Any CPU.Build.0 = DebugLocal
+		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Development|Any CPU.ActiveCfg = DebugLocal
+		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Development|Any CPU.Build.0 = DebugLocal
+		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Release|Any CPU.ActiveCfg = Release
+		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Release|Any CPU.Build.0 = Release
+		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Release|Any CPU.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

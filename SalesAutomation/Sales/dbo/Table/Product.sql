@@ -15,7 +15,8 @@
 	[UpdatedUTC] DATETIME2(7) NOT NULL DEFAULT GETUTCDATE(),
     CONSTRAINT [PK_dbo_Product] PRIMARY KEY ([ProductId]), 
     CONSTRAINT [FK_dbo_Product_dbo_Supplier] FOREIGN KEY ([SupplierId]) REFERENCES dbo.Supplier([SupplierId]), 
-    CONSTRAINT [FK_dbo_Product_dbo_SubSupplier] FOREIGN KEY ([SubSupplierId]) REFERENCES dbo.SubSupplier([SubSupplierId])
+    CONSTRAINT [FK_dbo_Product_dbo_SubSupplier] FOREIGN KEY ([SubSupplierId]) REFERENCES dbo.SubSupplier([SubSupplierId]), 
+    CONSTRAINT [AK_dbo_Product_TPN] UNIQUE ([TPN])
 )
 GO
 
@@ -28,3 +29,10 @@ CREATE TRIGGER [dbo].[TR_dbo_Product_SetValueForUpdatedUTC]
 		SET UpdatedUTC = GETUTCDATE()
 		WHERE ProductId IN (select ProductId from Inserted)
     END
+
+GO
+/*
+CREATE UNIQUE NONCLUSTERED INDEX [AK_dbo_Product_EAN]
+ON dbo.Product([EAN])
+WHERE [EAN] IS NOT NULL;
+*/
