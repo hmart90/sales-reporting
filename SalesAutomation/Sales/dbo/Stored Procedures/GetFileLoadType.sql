@@ -181,6 +181,35 @@ IF @RightSheetCount = 1
 	END
 
 
+SET @RightSheetCount = (SELECT COUNT(TempExcelSheetId) FROM dbo.TempExcelSheet WHERE SheetName LIKE 'rváltozá')
+
+IF @RightSheetCount = 1
+	BEGIN
+		TRUNCATE TABLE dbo.TempFileType;
+		SET @SQL = '
+		INSERT INTO [dbo].[TempFileType]
+				   ([Value])
+		SELECT *
+
+		FROM OPENROWSET(
+			''Microsoft.ACE.OLEDB.12.0''
+			,''Excel 12.0;Database=' + @Path + ';HDR=NO''
+			,''SELECT * FROM [árváltozás$H2:H2]'')';
+		EXEC (@SQL);
+		SET @CellValue = (SELECT TOP 1 [Value] FROM dbo.TempFileType);
+
+		IF @CellValue  LIKE 'Érvényességi dátum kezdet%'
+			BEGIN
+				SET @FileLoadType = 'TemplatePrice';
+				SET @CycleDone = 1;
+			END
+		ELSE
+			BEGIN
+				SET @CycleDone = 0;
+			END
+	END
+
+
 
 
 SELECT @FileLoadType as FileType

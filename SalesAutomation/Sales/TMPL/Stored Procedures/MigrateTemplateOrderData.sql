@@ -3,7 +3,7 @@
 	@OrderId AS INT
 
 AS
-DECLARE @FileLoadId INT = (SELECT FileLoadId FROM dbo.FileLoad WHERE Path = @Path AND IsLoaded = 0);
+DECLARE @FileLoadId INT = (SELECT FileLoadId FROM dbo.FileLoad WHERE [Path] = @Path AND IsLoaded = 0);
 
 INSERT INTO TMPL.OrderProductCount
 		(ProductId,
