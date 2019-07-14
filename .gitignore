@@ -31,3 +31,6 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
+/SalesAutomation/BaseData/Prices_master_data_190620.xlsx
+/SalesAutomation/BaseData/Product_master_data_190320.xlsx
+/SalesAutomation/BaseData/StoreData.xlsx
