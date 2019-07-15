@@ -4,7 +4,7 @@
 	[FileLoadId] INT NOT NULL,
 	[gyártó/forgalmazó]	NVARCHAR(500) NULL,
 	[brand/stúdió]	NVARCHAR(500) NULL,	
-	[EAN]	NVARCHAR(500) NULL,	
+	[EAN]	BIGINT NULL,	
 	[TPN] BIGINT NOT NULL,	
 	["megnevezés (borítócím/teljes terméknév)"]	NVARCHAR(500) NULL,
 	[kategória (DVD/Gaming)]	NVARCHAR(500) NULL,	

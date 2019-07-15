@@ -211,6 +211,10 @@
     <Build Include="TMPL\Stored Procedures\LoadTemplatePriceFile.sql" />
     <Build Include="TMPL\Stored Procedures\LoadTemplatePriceData.sql" />
     <Build Include="TMPL\Stored Procedures\MigrateTemplatePriceData.sql" />
+    <Build Include="Report\Stored Procedures\GetSupplierWeeklyReport.sql" />
+    <Build Include="NLF\Stored Procedures\UpdateProductFromRange.sql" />
+    <Build Include="Report\Stored Procedures\GetPriceReport.sql" />
+    <Build Include="Report\Stored Procedures\GetSubSupplierProductList.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />

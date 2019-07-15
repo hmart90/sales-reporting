@@ -70,9 +70,12 @@
     <DataSet Include="GetOrderProductList.rsd" />
     <DataSet Include="GetOrderProductStoreList.rsd" />
     <DataSet Include="GetOrderReport.rsd" />
+    <DataSet Include="GetPriceReport.rsd" />
     <DataSet Include="GetProductList.rsd" />
     <DataSet Include="GetStoreList.rsd" />
     <DataSet Include="GetSubSupplierList.rsd" />
+    <DataSet Include="GetSubSupplierProductList.rsd" />
+    <DataSet Include="GetSubSupplierWeeklyReport.rsd" />
     <DataSet Include="GetSupplierList.rsd" />
     <DataSet Include="GetSupplierMonthlyBillReport.rsd" />
     <DataSet Include="GetUploadedFileList.rsd" />
@@ -95,8 +98,10 @@
     <Report Include="OrderCheckReport.rdl" />
     <Report Include="OrderProductDecisionContextReport.rdl" />
     <Report Include="OrderReport.rdl" />
+    <Report Include="PriceReport.rdl" />
     <Report Include="ProductList.rdl" />
     <Report Include="StoreList.rdl" />
+    <Report Include="SubSupplierWeeklyReport.rdl" />
     <Report Include="SupplierList.rdl" />
     <Report Include="SupplierMonthlyBillReport.rdl" />
     <Report Include="TescoBillingReport.rdl" />
