@@ -73,6 +73,7 @@
     <DataSet Include="GetPriceReport.rsd" />
     <DataSet Include="GetProductList.rsd" />
     <DataSet Include="GetStoreList.rsd" />
+    <DataSet Include="GetSubSupplierDetailedWeeklyReport.rsd" />
     <DataSet Include="GetSubSupplierList.rsd" />
     <DataSet Include="GetSubSupplierProductList.rsd" />
     <DataSet Include="GetSubSupplierWeeklyReport.rsd" />
@@ -86,6 +87,7 @@
   <ItemGroup>
     <Report Include="AllocationReport.rdl" />
     <Report Include="AllocationStockCheckReport.rdl" />
+    <Report Include="CombinedSubSupplierWeeklyReport.rdl" />
     <Report Include="FRRevaluate.rdl" />
     <Report Include="FRSales.rdl" />
     <Report Include="FRStockClosing.rdl" />
@@ -102,6 +104,7 @@
     <Report Include="ProductList.rdl" />
     <Report Include="StoreList.rdl" />
     <Report Include="SubSupplierWeeklyReport.rdl" />
+    <Report Include="SupplierDetailedWeeklyReport.rdl" />
     <Report Include="SupplierList.rdl" />
     <Report Include="SupplierMonthlyBillReport.rdl" />
     <Report Include="TescoBillingReport.rdl" />

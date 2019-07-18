@@ -215,6 +215,7 @@
     <Build Include="NLF\Stored Procedures\UpdateProductFromRange.sql" />
     <Build Include="Report\Stored Procedures\GetPriceReport.sql" />
     <Build Include="Report\Stored Procedures\GetSubSupplierProductList.sql" />
+    <Build Include="Report\Stored Procedures\GetSupplierDetailedWeeklyReport.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />
