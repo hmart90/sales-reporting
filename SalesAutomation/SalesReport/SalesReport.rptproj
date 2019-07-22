@@ -61,6 +61,10 @@
     <DataSet Include="GetFRStockOpening.rsd" />
     <DataSet Include="GetFRStockOpeningDates.rsd" />
     <DataSet Include="GetFRStockReturn.rsd" />
+    <DataSet Include="GetHBRNrSKU.rsd" />
+    <DataSet Include="GetHBRStockItem.rsd" />
+    <DataSet Include="GetHBRStockLevel.rsd" />
+    <DataSet Include="GetHBRStockValue.rsd" />
     <DataSet Include="GetMSTRSales.rsd" />
     <DataSet Include="GetMSTRStock.rsd" />
     <DataSet Include="GetMSTRStockEventDates.rsd" />
@@ -95,6 +99,7 @@
     <Report Include="FRStockOpening.rdl" />
     <Report Include="FRStockReturn.rdl" />
     <Report Include="GetFRStockLoading.rdl" />
+    <Report Include="HBR.rdl" />
     <Report Include="MSTRSales.rdl" />
     <Report Include="MSTRStock.rdl" />
     <Report Include="OrderCheckReport.rdl" />

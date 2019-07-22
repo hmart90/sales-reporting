@@ -216,6 +216,10 @@
     <Build Include="Report\Stored Procedures\GetPriceReport.sql" />
     <Build Include="Report\Stored Procedures\GetSubSupplierProductList.sql" />
     <Build Include="Report\Stored Procedures\GetSupplierDetailedWeeklyReport.sql" />
+    <Build Include="Report\Stored Procedures\GetHBRNrSKU.sql" />
+    <Build Include="Report\Stored Procedures\GetHBRStockItem.sql" />
+    <Build Include="Report\Stored Procedures\GetHBRStockLevel.sql" />
+    <Build Include="Report\Stored Procedures\GetHBRStockValue.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />
