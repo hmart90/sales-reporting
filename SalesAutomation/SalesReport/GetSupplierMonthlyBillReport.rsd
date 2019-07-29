@@ -51,6 +51,10 @@
         <DataField>SupplierCostPrice</DataField>
         <rd:TypeName>System.Double</rd:TypeName>
       </Field>
+      <Field Name="SumStock">
+        <DataField>SumStock</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
     </Fields>
   </DataSet>
 </SharedDataSet>

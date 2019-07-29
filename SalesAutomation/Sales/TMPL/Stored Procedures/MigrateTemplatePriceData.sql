@@ -11,9 +11,9 @@ DECLARE @Updates TABLE (
 with SourceTable AS (
 SELECT	p.ProductId
       ,ISNULL([Új fogyasztói ár],pr.[SupplierRetailPrice]) AS [SupplierRetailPrice]
-      ,ISNULL([Új beszerzési ár],pr.[SupplierCostPrice]) AS [SupplierCostPrice]
+      ,ROUND(ISNULL([Új beszerzési ár],pr.[SupplierCostPrice]),2) AS [SupplierCostPrice]
       ,ISNULL([TESCO Új fogyasztói ár],pr.[TescoRetailPrice]) AS [TescoRetailPrice]
-      ,ISNULL([TESCO Új beszerzési ár],pr.[TescoCostPrice]) AS [TescoCostPrice]
+      ,ROUND(ISNULL([TESCO Új beszerzési ár],pr.[TescoCostPrice]),2) AS [TescoCostPrice]
       ,[Érvényességi dátum kezdete] AS StartDate
 		,sto.Staging_PriceId
 FROM TMPL.[Staging_Price] as sto
@@ -44,9 +44,9 @@ INSERT @Updates
 with InsertSourceTable AS (
 SELECT	p.ProductId
       ,ISNULL([Új fogyasztói ár],pr.[SupplierRetailPrice]) AS [SupplierRetailPrice]
-      ,ISNULL([Új beszerzési ár],pr.[SupplierCostPrice]) AS [SupplierCostPrice]
+      ,ROUND(ISNULL([Új beszerzési ár],pr.[SupplierCostPrice]),2) AS [SupplierCostPrice]
       ,ISNULL([TESCO Új fogyasztói ár],pr.[TescoRetailPrice]) AS [TescoRetailPrice]
-      ,ISNULL([TESCO Új beszerzési ár],pr.[TescoCostPrice]) AS [TescoCostPrice]
+      ,ROUND(ISNULL([TESCO Új beszerzési ár],pr.[TescoCostPrice]),2) AS [TescoCostPrice]
       ,[Érvényességi dátum kezdete] AS StartDate
 		,sto.Staging_PriceId
 FROM TMPL.[Staging_Price] as sto

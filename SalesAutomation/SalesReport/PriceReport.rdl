@@ -17,6 +17,9 @@
           <QueryParameter Name="@ProductId">
             <Value>=Parameters!ProductId.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@EventDate">
+            <Value>=Parameters!EventDate.Value</Value>
+          </QueryParameter>
         </QueryParameters>
       </SharedDataSet>
       <Fields>
@@ -955,6 +958,7 @@
     </ReportParameter>
     <ReportParameter Name="ProductId">
       <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
       <Prompt>Product</Prompt>
       <ValidValues>
         <DataSetReference>
@@ -963,6 +967,15 @@
           <LabelField>TitleHU</LabelField>
         </DataSetReference>
       </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="EventDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Today()</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Dátum</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
@@ -979,6 +992,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>SubSupplierId</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>EventDate</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
