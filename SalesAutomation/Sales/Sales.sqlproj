@@ -220,6 +220,12 @@
     <Build Include="Report\Stored Procedures\GetHBRStockItem.sql" />
     <Build Include="Report\Stored Procedures\GetHBRStockLevel.sql" />
     <Build Include="Report\Stored Procedures\GetHBRStockValue.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteDuplicatePriceRows.sql" />
+    <Build Include="FR\Table\Staging_MonthlyStockClosing.sql" />
+    <Build Include="FR\Table\MonthlyStockClosing.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRMonthlyClosing.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFRMonthlyClosingData.sql" />
+    <Build Include="Report\Stored Procedures\GetSubSupplierPricedDetailedWeeklyReport.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />

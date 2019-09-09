@@ -11,8 +11,10 @@ AS
 
 		BEGIN
 			
-			EXEC FR.LoadFRMonthlySales @Path
-			EXEC FR.MigrateFRMonthlySalesData @Path
+			EXEC FR.LoadFRMonthlySales @Path;
+			EXEC FR.MigrateFRMonthlySalesData @Path;
+			EXEC FR.LoadFRMonthlyClosing @Path;
+			EXEC FR.MigrateFRMonthlyClosingData @Path;
 			
 		END
 
