@@ -11,8 +11,8 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="AutomaticDataLoader"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{EA8C3442-57C2-4D6E-83A1-3A15A5EE5DCD}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{87A7FFAD-3B7E-450C-B54F-0F04BE67E910}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -176,7 +176,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Change File to Processed"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -199,7 +199,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Check if IsMoreFile"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -247,7 +247,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get New Name"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -304,7 +304,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Financial Report File"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -327,7 +327,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load MSTR Sales File"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -366,6 +366,29 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Loading data files\Load New Finance Report File"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{de092b94-804d-42db-b04d-f662b49b5b5a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load New Finance Report File"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{E72F4E85-D67B-40E2-9F6E-394AD7657561}"
+              SQLTask:SqlStatementSource="EXECUTE FR.LoadNewFinanceReportFile ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Path"
+                SQLTask:DtsVariableName="User::FilePath"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Loading data files\Load Range File"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -373,7 +396,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Range File"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -396,7 +419,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Template Order File"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -419,7 +442,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load TemplatePrice File"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -443,7 +466,7 @@
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Move file to storage"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -462,7 +485,7 @@
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Set DestionationPath"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -559,6 +582,23 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 17"
           DTS:To="Package\Loading data files\Load TemplatePrice File" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Loading data files.PrecedenceConstraints[Constraint 18]"
+          DTS:CreationName=""
+          DTS:DTSID="{97B92477-21F0-497F-82C2-5B31E4F19A90}"
+          DTS:From="Package\Loading data files\Load New Finance Report File"
+          DTS:ObjectName="Constraint 18"
+          DTS:To="Package\Loading data files\Get New Name" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Loading data files.PrecedenceConstraints[Constraint 19]"
+          DTS:CreationName=""
+          DTS:DTSID="{4FD5B9ED-5D11-4794-AA20-8B696E437DE6}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[User::FileType] == &quot;NewFinanceReport&quot;"
+          DTS:From="Package\Loading data files\Get File Type"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 19"
+          DTS:To="Package\Loading data files\Load New Finance Report File" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Loading data files.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
@@ -675,6 +715,62 @@
           Size="196.8,41.6"
           Id="Package\Clear FileNamePath table"
           TopLeft="38.6666663033624,133.411765735455" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="137.904761630662,175.011765735455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67.3254887317976"
+              Start="0,0"
+              End="0,59.8254887317976">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.8254887317976" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="138.742856957961,283.937254467252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.5714306247483,36.015691196438"
+              Start="0,0"
+              End="54.5714306247483,28.515691196438">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.007845598219" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.007845598219"
+                    Point2="0,18.007845598219"
+                    Point3="4,18.007845598219" />
+                  <mssgle:LineSegment
+                    End="50.5714306247483,18.007845598219" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.5714306247483,18.007845598219"
+                    Point2="54.5714306247483,18.007845598219"
+                    Point3="54.5714306247483,22.007845598219" />
+                  <mssgle:LineSegment
+                    End="54.5714306247483,28.515691196438" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Loading data files\Change File to Processed"
@@ -715,6 +811,10 @@
           Size="197.6,41.6"
           Id="Package\Loading data files\Load Template Order File"
           TopLeft="19.3142911249275,329.41176850672" />
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Loading data files\Load TemplatePrice File"
+          TopLeft="15.8857196379679,403.105883597007" />
         <NodeLayout
           Size="172,41.6"
           Id="Package\Loading data files\Move file to storage"
@@ -982,6 +1082,76 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Loading data files.PrecedenceConstraints[Constraint 16]"
+          TopLeft="206.285719637968,423.905883597007">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="292.457146720497,38.4000020419858"
+              Start="0,0"
+              End="284.957146720497,38.4000020419858">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="142.228573360249,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="142.228573360249,0"
+                    Point2="146.228573360249,0"
+                    Point3="146.228573360249,4" />
+                  <mssgle:LineSegment
+                    End="146.228573360249,34.4000020419858" />
+                  <mssgle:CubicBezierSegment
+                    Point1="146.228573360249,34.4000020419858"
+                    Point2="146.228573360249,38.4000020419858"
+                    Point3="150.228573360249,38.4000020419858" />
+                  <mssgle:LineSegment
+                    End="284.957146720497,38.4000020419858" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading data files.PrecedenceConstraints[Constraint 17]"
+          TopLeft="62.5904775334058,138.447060753977">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.4952421045621,264.65882284303"
+              Start="0,0"
+              End="48.4952421045621,257.15882284303">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.647968614964" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,67.647968614964"
+                    Point2="0,71.647968614964"
+                    Point3="4,71.647968614964" />
+                  <mssgle:LineSegment
+                    End="44.4952421045621,71.647968614964" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44.4952421045621,71.647968614964"
+                    Point2="48.4952421045621,71.647968614964"
+                    Point3="48.4952421045621,75.647968614964" />
+                  <mssgle:LineSegment
+                    End="48.4952421045621,257.15882284303" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="16.247621052281,76.647968614964,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Loading data files.PrecedenceConstraints[Constraint 2]"
           TopLeft="375.695243194477,59.2941181532649">
           <EdgeLayout.Curve>
@@ -1232,35 +1402,35 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="190.4,41.6"
-          Id="Package\Loading data files\Load TemplatePrice File"
-          TopLeft="15.8857196379679,403.105883597007" />
+          Size="218.4,41.6"
+          Id="Package\Loading data files\Load New Finance Report File"
+          TopLeft="466.971437641066,56.2823541680834" />
         <EdgeLayout
-          Id="Package\Loading data files.PrecedenceConstraints[Constraint 16]"
-          TopLeft="206.285719637968,423.905883597007">
+          Id="Package\Loading data files.PrecedenceConstraints[Constraint 18]"
+          TopLeft="576.171437641066,97.8823541680834">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="292.457146720497,38.4000020419858"
+              EndConnector="50.4714287173988,343.62353147091"
               Start="0,0"
-              End="284.957146720497,38.4000020419858">
+              End="50.4714287173988,336.12353147091">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="142.228573360249,0" />
+                    End="0,262.352747710094" />
                   <mssgle:CubicBezierSegment
-                    Point1="142.228573360249,0"
-                    Point2="146.228573360249,0"
-                    Point3="146.228573360249,4" />
+                    Point1="0,262.352747710094"
+                    Point2="0,266.352747710094"
+                    Point3="4,266.352747710094" />
                   <mssgle:LineSegment
-                    End="146.228573360249,34.4000020419858" />
+                    End="46.4714287173988,266.352747710094" />
                   <mssgle:CubicBezierSegment
-                    Point1="146.228573360249,34.4000020419858"
-                    Point2="146.228573360249,38.4000020419858"
-                    Point3="150.228573360249,38.4000020419858" />
+                    Point1="46.4714287173988,266.352747710094"
+                    Point2="50.4714287173988,266.352747710094"
+                    Point3="50.4714287173988,270.352747710094" />
                   <mssgle:LineSegment
-                    End="284.957146720497,38.4000020419858" />
+                    End="50.4714287173988,336.12353147091" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1270,113 +1440,57 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Loading data files.PrecedenceConstraints[Constraint 17]"
-          TopLeft="62.5904775334058,138.447060753977">
+          Id="Package\Loading data files.PrecedenceConstraints[Constraint 19]"
+          TopLeft="177.257144200073,112.047060753977">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="48.4952421045621,264.65882284303"
+              EndConnector="289.714293440994,-34.964706585894"
               Start="0,0"
-              End="48.4952421045621,257.15882284303">
+              End="282.214293440994,-34.964706585894">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,67.647968614964" />
+                    End="118.323812786197,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,67.647968614964"
-                    Point2="0,71.647968614964"
-                    Point3="4,71.647968614964" />
+                    Point1="118.323812786197,0"
+                    Point2="122.323812786197,0"
+                    Point3="122.323812786197,-4" />
                   <mssgle:LineSegment
-                    End="44.4952421045621,71.647968614964" />
+                    End="122.323812786197,-30.964706585894" />
                   <mssgle:CubicBezierSegment
-                    Point1="44.4952421045621,71.647968614964"
-                    Point2="48.4952421045621,71.647968614964"
-                    Point3="48.4952421045621,75.647968614964" />
+                    Point1="122.323812786197,-30.964706585894"
+                    Point2="122.323812786197,-34.964706585894"
+                    Point3="126.323812786197,-34.964706585894" />
                   <mssgle:LineSegment
-                    End="48.4952421045621,257.15882284303" />
+                    End="282.214293440994,-34.964706585894" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="16.247621052281,76.647968614964,16,16"
+              BoundingBox="114.323812786197,1,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="687.2,768.8"
-          Size="687.2,812"
+          IsExpanded="False"
+          PanelSize="700,768.8"
+          Size="700,43.2"
           Id="Package\Loading data files"
           TopLeft="65.4857110548992,414.76078710501" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="137.904761630662,175.011765735455">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,67.3254887317976"
-              Start="0,0"
-              End="0,59.8254887317976">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.8254887317976" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="138.742856957961,283.937254467252">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="54.5714306247483,36.015691196438"
-              Start="0,0"
-              End="54.5714306247483,28.515691196438">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.007845598219" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.007845598219"
-                    Point2="0,18.007845598219"
-                    Point3="4,18.007845598219" />
-                  <mssgle:LineSegment
-                    End="50.5714306247483,18.007845598219" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50.5714306247483,18.007845598219"
-                    Point2="54.5714306247483,18.007845598219"
-                    Point3="54.5714306247483,22.007845598219" />
-                  <mssgle:LineSegment
-                    End="54.5714306247483,28.515691196438" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="193.314287582709,361.55294566369">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="215.77142347219,53.2078414413199"
+              EndConnector="222.17142347219,53.2078414413199"
               Start="0,0"
-              End="215.77142347219,45.7078414413199">
+              End="222.17142347219,45.7078414413199">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1387,13 +1501,13 @@
                     Point2="0,26.60392072066"
                     Point3="4,26.60392072066" />
                   <mssgle:LineSegment
-                    End="211.77142347219,26.60392072066" />
+                    End="218.17142347219,26.60392072066" />
                   <mssgle:CubicBezierSegment
-                    Point1="211.77142347219,26.60392072066"
-                    Point2="215.77142347219,26.60392072066"
-                    Point3="215.77142347219,30.60392072066" />
+                    Point1="218.17142347219,26.60392072066"
+                    Point2="222.17142347219,26.60392072066"
+                    Point3="222.17142347219,30.60392072066" />
                   <mssgle:LineSegment
-                    End="215.77142347219,45.7078414413199" />
+                    End="222.17142347219,45.7078414413199" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

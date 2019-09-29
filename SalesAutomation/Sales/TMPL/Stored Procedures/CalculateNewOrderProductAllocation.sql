@@ -2,7 +2,7 @@
 	@OrderProductCountId INT
 AS
 DECLARE @ProductId INT = (SELECT ProductId FROM TMPL.OrderProductCount WHERE OrderProductCountId = @OrderProductCountId);
-DECLARE @Is67 BIT = (SELECT TOP 1 (CASE WHEN Connectioncount = 67 THEN 1 ELSE 0 END) FROM NLF.[Range] WHERE ProductId = @ProductId ORDER BY EventDate DESC);
+DECLARE @Is67 BIT = (SELECT TOP 1 (CASE WHEN ConnectionCount = 67 THEN 1 ELSE 0 END) FROM NLF.[Range] WHERE ProductId = @ProductId ORDER BY EventDate DESC);
 EXEC [TMPL].[CalculateStoreShare] @Is67;
 EXEC [TMPL].[CalculateStoreStock] @ProductId;
 DECLARE @ExistingCount INT = (SELECT SUM(Stock) FROM TMPL.Staging_StoreShare);
@@ -25,11 +25,16 @@ WHILE @CurrentCount <> @TargetCount AND @Cycle < 10000
 			@ProductId,
 			stss.StoreId,
 			(CASE	
-				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) > @Max AND @Max > Stock THEN @Max
-				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) > @Max AND @Max <= Stock THEN Stock
+				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) >= @Max + Stock THEN @Max + Stock
+				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) >= Stock AND round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) >= @Min THEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0)
+				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) >= Stock AND round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) < @Min THEN @Min
 				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) < Stock THEN Stock
-				WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) < @Min THEN @Min
-				ELSE round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0)
+				ELSE 0
+				--WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) > @Max AND @Max > Stock THEN @Max
+				--WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) > @Max AND @Max <= Stock THEN Stock
+				--WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) < Stock THEN Stock
+				--WHEN round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0) < @Min THEN @Min
+				--ELSE round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0)
 			END		
 			) AS TargetAllocation,
 			round(stss.Share * cast(@CurrentPseudo as FLOAT) , 0)
@@ -63,7 +68,7 @@ IF @CurrentCount <> @TargetCount
 		SELECT TOP (@Difference) sta.StoreId 
 		FROM TMPL.Staging_Allocation as sta
 		INNER JOIN TMPL.Staging_StoreShare as stss ON stss.StoreId = sta.StoreId
-		WHERE Number > @Min AND Number < @Max AND Number > stss.Stock
+		WHERE Number > @Min AND Number < stss.Stock + @Max AND Number > stss.Stock
 
 		UPDATE t
 		SET Number = (CASE WHEN @CurrentCount > @TargetCount THEN Number - 1 ELSE Number + 1 END)

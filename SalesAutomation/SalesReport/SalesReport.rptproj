@@ -63,6 +63,7 @@
     <DataSet Include="GetFRStockOpeningDates.rsd" />
     <DataSet Include="GetFRStockReturn.rsd" />
     <DataSet Include="GetHBRNrSKU.rsd" />
+    <DataSet Include="GetHBRSalesValue.rsd" />
     <DataSet Include="GetHBRStockItem.rsd" />
     <DataSet Include="GetHBRStockLevel.rsd" />
     <DataSet Include="GetHBRStockValue.rsd" />

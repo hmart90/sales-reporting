@@ -227,6 +227,17 @@
     <Build Include="FR\Stored Procedures\MigrateFRMonthlyClosingData.sql" />
     <Build Include="Report\Stored Procedures\GetSubSupplierPricedDetailedWeeklyReport.sql" />
     <Build Include="Report\Stored Procedures\GetDetailedPriceReport.sql" />
+    <Build Include="FR\Table\Staging_NewSales.sql" />
+    <Build Include="FR\Table\Staging_NewStock.sql" />
+    <Build Include="FR\Table\Staging_NewRR.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRNewSales.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRNewStock.sql" />
+    <Build Include="FR\Stored Procedures\LoadFRNewRR.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFRNewSalesData.sql" />
+    <Build Include="FR\Stored Procedures\MigrateFRNewStockData.sql" />
+    <Build Include="FR\Stored Procedures\LoadNewFinanceReportFile.sql" />
+    <Build Include="FR\Stored Procedures\GetFRNewFileDates.sql" />
+    <Build Include="Report\Stored Procedures\GetHBRSalesValue.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />

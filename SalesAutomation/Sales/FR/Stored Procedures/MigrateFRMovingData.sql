@@ -24,6 +24,6 @@ SELECT p.ProductId
       ,[ÉrtékOnktgAron]
 	  ,sto.Staging_StockMovingId
 FROM [FR].[Staging_StockMoving] as sto
-INNER JOIN dbo.Product as p ON p.TPN = sto.TPN
-INNER JOIN dbo.Store as st ON st.Code = sto.Site
+INNER JOIN dbo.Product as p ON p.TPN = sto.[tpn]
+INNER JOIN dbo.Store as st ON st.Code = sto.[site]
 WHERE [FileLoadId] = @FileLoadId

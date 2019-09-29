@@ -209,7 +209,34 @@ IF @RightSheetCount = 1
 			END
 	END
 
+	
+	SET @RightSheetCount = (SELECT COUNT(TempExcelSheetId) FROM dbo.TempExcelSheet WHERE SheetName LIKE 'Stock turnover')
 
+	IF @RightSheetCount = 1
+		BEGIN
+			TRUNCATE TABLE dbo.TempFileType;
+			SET @SQL = '
+			INSERT INTO [dbo].[TempFileType]
+					   ([Value])
+			SELECT *
+
+			FROM OPENROWSET(
+				''Microsoft.ACE.OLEDB.12.0''
+				,''Excel 12.0;Database=' + @Path + ';HDR=NO''
+				,''SELECT * FROM [Summary$B2:B2]'')';
+			EXEC (@SQL);
+			SET @CellValue = (SELECT TOP 1 [Value] FROM dbo.TempFileType);
+
+			IF @CellValue  LIKE '%onsignment weekly report summar%'
+				BEGIN
+					SET @FileLoadType = 'NewFinanceReport';
+					SET @CycleDone = 1;
+				END
+			ELSE
+				BEGIN
+					SET @CycleDone = 0;
+				END
+		END
 
 
 SELECT @FileLoadType as FileType
