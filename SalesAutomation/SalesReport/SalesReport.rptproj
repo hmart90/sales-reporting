@@ -79,6 +79,7 @@
     <DataSet Include="GetPriceReport.rsd" />
     <DataSet Include="GetProductList.rsd" />
     <DataSet Include="GetStoreList.rsd" />
+    <DataSet Include="GetSubSupplierBillingReport.rsd" />
     <DataSet Include="GetSubSupplierDetailedWeeklyReport.rsd" />
     <DataSet Include="GetSubSupplierList.rsd" />
     <DataSet Include="GetSubSupplierPricedDetailedWeeklyReport.rsd" />
@@ -86,6 +87,7 @@
     <DataSet Include="GetSubSupplierWeeklyReport.rsd" />
     <DataSet Include="GetSupplierList.rsd" />
     <DataSet Include="GetSupplierMonthlyBillReport.rsd" />
+    <DataSet Include="GetTescoBillingReport.rsd" />
     <DataSet Include="GetUploadedFileList.rsd" />
   </ItemGroup>
   <ItemGroup>
@@ -112,12 +114,14 @@
     <Report Include="PriceReport.rdl" />
     <Report Include="ProductList.rdl" />
     <Report Include="StoreList.rdl" />
+    <Report Include="SubSupplierBillingReport.rdl" />
     <Report Include="SubSupplierPricedDetailedWeeklyReport.rdl" />
     <Report Include="SubSupplierWeeklyReport.rdl" />
     <Report Include="SupplierDetailedWeeklyReport.rdl" />
     <Report Include="SupplierList.rdl" />
     <Report Include="SupplierMonthlyBillReport.rdl" />
     <Report Include="TescoBillingReport.rdl" />
+    <Report Include="TescoBillingReportOld.rdl" />
     <Report Include="UploadedFileList.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />

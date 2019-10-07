@@ -238,6 +238,8 @@
     <Build Include="FR\Stored Procedures\LoadNewFinanceReportFile.sql" />
     <Build Include="FR\Stored Procedures\GetFRNewFileDates.sql" />
     <Build Include="Report\Stored Procedures\GetHBRSalesValue.sql" />
+    <Build Include="Report\Stored Procedures\GetTescoBillingReport.sql" />
+    <Build Include="Report\Stored Procedures\GetSubSupplierBillingReport.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />
