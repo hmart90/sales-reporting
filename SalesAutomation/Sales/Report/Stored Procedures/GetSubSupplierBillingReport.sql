@@ -10,12 +10,12 @@ SELECT
 		,p.TitleHU as [Description]
       ,sum(s.[Number]) as SumSales
 	  ,round(pr.SupplierRetailPrice,0) as SupplierRetailPrice
-	  ,round(pr.SupplierCostPrice,0) as SupplierCostPrice
+	  ,round(pr.SupplierCostPrice,2) as SupplierCostPrice
 	  ,st.SumStock
 
 FROM [FR].[Sales] as s
 INNER JOIN dbo.Product as p on p.ProductId = s.ProductId
-INNER JOIN dbo.Price as pr on pr.ProductId = p.ProductId AND pr.StartDate <= s.EventDate AND (pr.EndDate > s.EventDate OR pr.EndDate IS NULL)
+INNER JOIN dbo.Price as pr on pr.ProductId = p.ProductId AND pr.StartDate <= s.EventDate AND (pr.EndDate >= s.EventDate OR pr.EndDate IS NULL)
 LEFT OUTER JOIN (
 	SELECT st.ProductId, SUM(st.[Number]) as SumStock
 	FRoM FR.StockClosing as st

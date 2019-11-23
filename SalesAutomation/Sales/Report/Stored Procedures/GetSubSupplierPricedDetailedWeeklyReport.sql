@@ -19,7 +19,7 @@ SELECT pm.[TPN]
 FROM [dbo].[Product] as pm
 
 INNER JOIN dbo.SubSupplier as ss on ss.SubSupplierId = pm.SubSupplierId
-INNER JOIN dbo.Price as pr on pr.ProductId = pm.ProductId AND pr.StartDate <= @StartDate AND (pr.EndDate > @StartDate OR pr.EndDate IS NULL)
+INNER JOIN dbo.Price as pr on pr.ProductId = pm.ProductId AND pr.StartDate <= @EndDate AND (pr.EndDate >= @EndDate OR pr.EndDate IS NULL)
 
 LEFT OUTER JOIN (
 SELECT ProductId

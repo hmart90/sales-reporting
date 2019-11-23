@@ -10,4 +10,5 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-:r .\LoadBaseData.sql			
+:r .\LoadBaseData.sql	
+:r .\Configuration.sql		

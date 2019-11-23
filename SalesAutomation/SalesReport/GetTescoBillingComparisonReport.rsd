@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>Sales</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@StartDate">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Date</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@EndDate">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Date</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>Report.GetTescoBillingComparisonReport</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="TPN">
+        <DataField>TPN</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="EAN">
+        <DataField>EAN</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="Description">
+        <DataField>Description</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SupplierRetailPrice">
+        <DataField>SupplierRetailPrice</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="SupplierCostPrice">
+        <DataField>SupplierCostPrice</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="FinanceSumStock">
+        <DataField>FinanceSumStock</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="MSTRSumStock">
+        <DataField>MSTRSumStock</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="FinanceSumSales">
+        <DataField>FinanceSumSales</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="MSTRSumSales">
+        <DataField>MSTRSumSales</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

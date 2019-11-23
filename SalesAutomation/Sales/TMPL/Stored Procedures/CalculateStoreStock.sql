@@ -5,12 +5,12 @@ AS
 	UPDATE TMPL.Staging_StoreShare
 	SET Stock = 0;
 
-	DECLARE @LastStockDate DATE = (SELECT MAX(EndDate) FROM dbo.FileLoad WHERE [Type] = 'FinanceReport' AND IsLoaded = 1);
+	DECLARE @LastStockDate DATE = (SELECT MAX(EndDate) FROM dbo.FileLoad WHERE [Type] = 'MSTRStock' AND IsLoaded = 1);
 
 	with laststock as (
 		SELECT [StoreId]
 			,[Number]
-		FROM [FR].[StockClosing]
+		FROM [MSTR].[Stock]
 		WHERE [EventDate] = @LastStockDate
 			AND [ProductId] = @ProductId
 		)

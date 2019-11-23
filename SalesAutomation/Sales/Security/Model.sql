@@ -1,0 +1,2 @@
+﻿CREATE SCHEMA [Model]
+	AUTHORIZATION dbo
