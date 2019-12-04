@@ -4,7 +4,7 @@ AS
 DECLARE @FileLoadId INT = (SELECT FileLoadId FROM dbo.FileLoad WHERE Path = @Path AND IsLoaded = 0);
 DECLARE @SQL AS NVARCHAR(MAX);
 DECLARE @SheetName as nvarchar(500);
-SET @SheetName = (SELECT TOP 1 SheetName FROM dbo.TempExcelSheet WHERE SheetName LIKE 'DVD%' OR SheetName LIKE 'Gaming%');
+SET @SheetName = (SELECT TOP 1 SheetName FROM dbo.TempExcelSheet WHERE SheetName LIKE 'DVD%' OR SheetName LIKE 'Gaming%' OR SheetName = 'Delta-stock');
 
 SET @SQL = '
 INSERT INTO [MSTR].[Staging_Stock]

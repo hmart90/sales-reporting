@@ -8,8 +8,10 @@ SELECT TOP 1000000 cast(st.[ProductId] as nvarchar(10)) as pr
 	  ,st.StockId
 
 FROM [MSTR].Stock as st
-LEFT JOIN MSTR.[Sales] as sa on st.ProductId = sa.ProductId AND st.[EventDate] = DATEADD(day,-1,sa.[EventDate]) AND st.[StoreId] = sa.[StoreId] 
+LEFT JOIN MSTR.[Sales] as sa on st.ProductId = sa.ProductId AND st.[EventDate] = DATEADD(day,-1,sa.[EventDate]) AND st.[StoreId] = sa.[StoreId]
+INNER JOIN dbo.Product as p on p.ProductId = st.ProductId
 WHERE st.Number >= 0
 	AND st.EventDate >= '2019-01-01'
+	AND p.SubSupplierId IS NOT NULL
 ORDER BY NEWID()
 

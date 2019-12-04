@@ -40,8 +40,8 @@ IF @RightSheetCount = 1
 			END
 	END
 
-SET @RightSheetCount = (SELECT COUNT(TempExcelSheetId) FROM dbo.TempExcelSheet WHERE SheetName LIKE 'Gaming%' OR SheetName LIKE 'DVD%');
-SET @SheetName = (SELECT TOP 1 SheetName FROM dbo.TempExcelSheet WHERE SheetName LIKE 'Gaming%' OR SheetName LIKE 'DVD%');
+SET @RightSheetCount = (SELECT COUNT(TempExcelSheetId) FROM dbo.TempExcelSheet WHERE SheetName LIKE 'Gaming%' OR SheetName LIKE 'DVD%' OR SheetName = 'Delta-sales' OR SheetName = 'Delta-stock');
+SET @SheetName = (SELECT TOP 1 SheetName FROM dbo.TempExcelSheet WHERE SheetName LIKE 'Gaming%' OR SheetName LIKE 'DVD%' OR SheetName = 'Delta-sales' OR SheetName = 'Delta-stock');
 IF @RightSheetCount > 0
 BEGIN
 	IF @CycleDone = 0
