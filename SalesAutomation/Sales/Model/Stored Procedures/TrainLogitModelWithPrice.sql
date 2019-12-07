@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Model].[TrainLogitModel]
+﻿CREATE PROCEDURE [Model].[TrainLogitModelWithPrice]
 	@Name AS NVARCHAR(100)
 AS
 
@@ -22,25 +22,25 @@ stock = pd.Series(salesdata.stock, dtype=''category'')
 sales = pd.Series(salesdata.sales, dtype=''float64'')
 date = pd.Series(salesdata.date, dtype=''category'')
 store = pd.Series(salesdata.store, dtype=''category'')
-pr = pd.Series(salesdata.pr, dtype=''category'')
+price = pd.Series(salesdata.price, dtype=''category'')
 data = pd.DataFrame(
 	{
 		''stock'': stock,
 		''sales'': sales,
 		''date'': date,
-		''pr'': pr,
+		''price'': price,
 		''store'': store
 	}
 )
 regObj = rx_logit(
-	"sales ~ pr + stock + date + store",
+	"sales ~ date + price + stock + store",
 	data = data,
 	cube = True
 )
 model = rx_serialize_model(regObj, realtime_scoring_only = False)
 OutputDataSet  = regObj.coefficients
 OutputDataSet[''index1''] = OutputDataSet.index',
-@input_data_1 = N'SELECT pr,store,stock,sales,[date] FROM Model.ModelView;',
+@input_data_1 = N'SELECT price,store,stock,sales,[date] FROM Model.ModelView;',
 @input_data_1_name = N'salesdata',
 @params = N'@model varbinary(max) OUTPUT',
 @model = @model OUTPUT

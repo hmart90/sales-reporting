@@ -257,6 +257,7 @@
     <Build Include="Model\Table\Prediction.sql" />
     <Build Include="Model\Stored Procedures\CompareActualtoPredicted.sql" />
     <Build Include="Model\Stored Procedures\GetProductScores.sql" />
+    <Build Include="Model\Stored Procedures\TrainLogitModelWithPrice.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScripts\PostDeployment.sql" />
