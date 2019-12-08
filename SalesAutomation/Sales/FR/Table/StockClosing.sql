@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [FR].[StockClosing]
 (
 	[StockClosingId] INT IDENTITY(1,1) NOT NULL,
-	[Staging_StockClosingId] INT NOT NULL,
+	[Staging_StockClosingId] INT NULL,
 	[ProductId] INT NOT NULL,
 	[StoreId] INT NOT NULL,
 	[EventDate] DATE NOT NULL,

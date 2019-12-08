@@ -29,10 +29,9 @@ THEN UPDATE
 	SET t.[Number] = s.[Closing stock QTY],
 		t.[CostUnitPrice] = s.[BeszEgységár],
 		t.[ValueCostPrice] = s.[ÉrtékOnktgAron],
-		t.[ValueRetailPrice] = s.[ÉrtékFogyAron],
-		t.Staging_StockClosingId = s.StagingId
+		t.[ValueRetailPrice] = s.[ÉrtékFogyAron]
 
 WHEN NOT MATCHED BY TARGET 
-THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],[CostUnitPrice],[ValueCostPrice],[ValueRetailPrice],Staging_StockClosingId) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[Closing stock QTY],s.[BeszEgységár],s.[ÉrtékOnktgAron],s.[ÉrtékFogyAron],s.StagingId);
+THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],[CostUnitPrice],[ValueCostPrice],[ValueRetailPrice]) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[Closing stock QTY],s.[BeszEgységár],s.[ÉrtékOnktgAron],s.[ÉrtékFogyAron]);
 
 RETURN 0

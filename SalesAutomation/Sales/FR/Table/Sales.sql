@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [FR].[Sales]
 (
 	[SalesId] INT IDENTITY(1,1) NOT NULL,
-	[Staging_SalesId] INT NOT NULL,
+	[Staging_SalesId] INT NULL,
 	[ProductId] INT NOT NULL,
 	[StoreId] INT NOT NULL,
 	[EventDate] DATE NOT NULL,

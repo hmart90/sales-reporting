@@ -32,10 +32,9 @@ THEN UPDATE
 		t.[ValueCostPrice] = s.[Értékesített készlet (érték)],
 		t.[PriceMargin] = s.[Gross margin],
 		t.[NetSales] = s.[Sales at retail price excl VAT],
-		t.[BrutSales] = s.[Bruttó Árbevétel],
-		t.Staging_SalesId = s.StagingId
+		t.[BrutSales] = s.[Bruttó Árbevétel]
 		
 WHEN NOT MATCHED BY TARGET 
-THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],[CostPrice],[ValueCostPrice],[PriceMargin],[NetSales],[BrutSales],Staging_SalesId) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[Sales QTY],s.[Beszerzési Egységár],s.[Értékesített készlet (érték)],s.[Gross margin],s.[Sales at retail price excl VAT],s.[Bruttó Árbevétel],s.StagingId);
+THEN INSERT ([ProductId],[StoreId],[EventDate],[Number],[CostPrice],[ValueCostPrice],[PriceMargin],[NetSales],[BrutSales]) VALUES (s.[ProductId],s.StoreId,s.EventDate,s.[Sales QTY],s.[Beszerzési Egységár],s.[Értékesített készlet (érték)],s.[Gross margin],s.[Sales at retail price excl VAT],s.[Bruttó Árbevétel]);
 
 RETURN 0
