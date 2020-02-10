@@ -88,6 +88,7 @@
     <Folder Include="Model\View" />
     <Folder Include="Model\Stored Procedures" />
     <Folder Include="Model\Table" />
+    <Folder Include="Snapshots" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Table\Store.sql" />
@@ -265,6 +266,7 @@
   <ItemGroup>
     <None Include="PostDeploymentScripts\LoadBaseData.sql" />
     <None Include="PostDeploymentScripts\Configuration.sql" />
+    <None Include="Snapshots\Sales_20200210_20-59-56.dacpac" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Sales.refactorlog" />

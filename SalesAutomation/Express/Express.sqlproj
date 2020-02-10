@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Express</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{15516514-d673-425b-b1bd-c89e9ed91610}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Express</RootNamespace>
+    <AssemblyName>Express</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="FR\" />
+    <Folder Include="FR\Tables\" />
+    <Folder Include="TMPL\" />
+    <Folder Include="TMPL\Tables\" />
+    <Folder Include="NLF\" />
+    <Folder Include="NLF\Tables\" />
+    <Folder Include="MSTR\" />
+    <Folder Include="MSTR\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="FR\Tables\MonthlyStockClosing.sql" />
+    <Build Include="FR\Tables\Staging_MonthlyStockClosing.sql" />
+    <Build Include="TMPL\Tables\Allocation.sql" />
+    <Build Include="FR\Tables\Staging_StockLoading.sql" />
+    <Build Include="FR\Tables\Staging_StockMoving.sql" />
+    <Build Include="NLF\Tables\Range.sql" />
+    <Build Include="FR\Tables\Staging_Revaluate.sql" />
+    <Build Include="FR\Tables\Staging_StockReturn.sql" />
+    <Build Include="FR\Tables\Staging_StockOpening.sql" />
+    <Build Include="FR\Tables\Staging_Sales.sql" />
+    <Build Include="FR\Tables\Staging_StockClosing.sql" />
+    <Build Include="FR\Tables\StockReturn.sql" />
+    <Build Include="FR\Tables\StockOpening.sql" />
+    <Build Include="FR\Tables\StockLoading.sql" />
+    <Build Include="FR\Tables\StockClosing.sql" />
+    <Build Include="FR\Tables\StockMoving.sql" />
+    <Build Include="FR\Tables\MonthlySales.sql" />
+    <Build Include="FR\Tables\Revaluate.sql" />
+    <Build Include="FR\Tables\Staging_MonthlySales.sql" />
+    <Build Include="FR\Tables\Sales.sql" />
+    <Build Include="MSTR\Tables\Staging_Stock.sql" />
+    <Build Include="MSTR\Tables\Staging_Sales.sql" />
+    <Build Include="MSTR\Tables\Sales.sql" />
+    <Build Include="MSTR\Tables\Stock.sql" />
+    <Build Include="NLF\Tables\Staging_Range.sql" />
+    <Build Include="FR\Tables\Staging_NewRR.sql" />
+    <Build Include="TMPL\Tables\Staging_Allocation.sql" />
+    <Build Include="FR\Tables\Staging_NewSales.sql" />
+    <Build Include="TMPL\Tables\Order.sql" />
+    <Build Include="FR\Tables\Staging_NewStock.sql" />
+    <Build Include="TMPL\Tables\Staging_StoreShare.sql" />
+    <Build Include="TMPL\Tables\OrderProductCount.sql" />
+    <Build Include="TMPL\Tables\Staging_OrderProductCount.sql" />
+    <Build Include="dbo\Tables\FileLoad.sql" />
+    <Build Include="dbo\Tables\Product.sql" />
+    <Build Include="dbo\Tables\Store.sql" />
+    <Build Include="dbo\Tables\SubSupplier.sql" />
+    <Build Include="dbo\Tables\Supplier.sql" />
+    <Build Include="dbo\Tables\TempDirectoryContent.sql" />
+    <Build Include="dbo\Tables\TempExcelSheet.sql" />
+    <Build Include="dbo\Tables\TempFileDates.sql" />
+    <Build Include="dbo\Tables\TempFileType.sql" />
+    <Build Include="TMPL\Tables\Staging_Price.sql" />
+    <Build Include="dbo\Tables\Price.sql" />
+    <Build Include="Security\FR.sql" />
+    <Build Include="Security\MSTR.sql" />
+    <Build Include="Security\NLF.sql" />
+    <Build Include="Security\TMPL.sql" />
+  </ItemGroup>
+</Project>

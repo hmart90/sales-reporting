@@ -9,7 +9,7 @@ SELECT
 		,p.TitleHU as [Description]
       ,sum(s.[Number]) as SumSales
 	  ,round(pr.TescoRetailPrice,0) as SupplierRetailPrice
-	  ,round(pr.TescoCostPrice,0) as SupplierCostPrice
+	  ,round(pr.TescoCostPrice,2) as SupplierCostPrice
 	  ,st.SumStock
 
 FROM [FR].[Sales] as s

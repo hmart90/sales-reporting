@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [NLF]
+    AUTHORIZATION [dbo];
+
