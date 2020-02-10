@@ -61,8 +61,6 @@
     <Folder Include="Properties" />
     <Folder Include="FR\" />
     <Folder Include="FR\Tables\" />
-    <Folder Include="TMPL\" />
-    <Folder Include="TMPL\Tables\" />
     <Folder Include="NLF\" />
     <Folder Include="NLF\Tables\" />
     <Folder Include="MSTR\" />
@@ -74,15 +72,7 @@
   <ItemGroup>
     <Build Include="FR\Tables\MonthlyStockClosing.sql" />
     <Build Include="FR\Tables\Staging_MonthlyStockClosing.sql" />
-    <Build Include="TMPL\Tables\Allocation.sql" />
-    <Build Include="FR\Tables\Staging_StockLoading.sql" />
-    <Build Include="FR\Tables\Staging_StockMoving.sql" />
     <Build Include="NLF\Tables\Range.sql" />
-    <Build Include="FR\Tables\Staging_Revaluate.sql" />
-    <Build Include="FR\Tables\Staging_StockReturn.sql" />
-    <Build Include="FR\Tables\Staging_StockOpening.sql" />
-    <Build Include="FR\Tables\Staging_Sales.sql" />
-    <Build Include="FR\Tables\Staging_StockClosing.sql" />
     <Build Include="FR\Tables\StockReturn.sql" />
     <Build Include="FR\Tables\StockOpening.sql" />
     <Build Include="FR\Tables\StockLoading.sql" />
@@ -98,27 +88,16 @@
     <Build Include="MSTR\Tables\Stock.sql" />
     <Build Include="NLF\Tables\Staging_Range.sql" />
     <Build Include="FR\Tables\Staging_NewRR.sql" />
-    <Build Include="TMPL\Tables\Staging_Allocation.sql" />
     <Build Include="FR\Tables\Staging_NewSales.sql" />
-    <Build Include="TMPL\Tables\Order.sql" />
     <Build Include="FR\Tables\Staging_NewStock.sql" />
-    <Build Include="TMPL\Tables\Staging_StoreShare.sql" />
-    <Build Include="TMPL\Tables\OrderProductCount.sql" />
-    <Build Include="TMPL\Tables\Staging_OrderProductCount.sql" />
     <Build Include="dbo\Tables\FileLoad.sql" />
     <Build Include="dbo\Tables\Product.sql" />
     <Build Include="dbo\Tables\Store.sql" />
     <Build Include="dbo\Tables\SubSupplier.sql" />
     <Build Include="dbo\Tables\Supplier.sql" />
-    <Build Include="dbo\Tables\TempDirectoryContent.sql" />
-    <Build Include="dbo\Tables\TempExcelSheet.sql" />
-    <Build Include="dbo\Tables\TempFileDates.sql" />
-    <Build Include="dbo\Tables\TempFileType.sql" />
-    <Build Include="TMPL\Tables\Staging_Price.sql" />
     <Build Include="dbo\Tables\Price.sql" />
     <Build Include="Security\FR.sql" />
     <Build Include="Security\MSTR.sql" />
     <Build Include="Security\NLF.sql" />
-    <Build Include="Security\TMPL.sql" />
   </ItemGroup>
 </Project>

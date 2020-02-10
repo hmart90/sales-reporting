@@ -1,3 +1,0 @@
-﻿CREATE SCHEMA [TMPL]
-    AUTHORIZATION [dbo];
-

@@ -11,6 +11,8 @@ Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SalesReport", "SalesReport\
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "AdminReport", "Report Project1\AdminReport.rptproj", "{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Express", "Express\Express.sqlproj", "{15516514-D673-425B-B1BD-C89E9ED91610}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,18 @@ Global
 		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Release|Any CPU.ActiveCfg = Release
 		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Release|Any CPU.Build.0 = Release
 		{3B4FBFD2-6752-4A92-8AFA-5B19449F7C83}.Release|Any CPU.Deploy.0 = Release
+		{15516514-D673-425B-B1BD-C89E9ED91610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.DebugLocal|Any CPU.Deploy.0 = Debug|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15516514-D673-425B-B1BD-C89E9ED91610}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
